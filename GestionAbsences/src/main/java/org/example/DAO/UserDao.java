@@ -1,35 +1,23 @@
 package org.example.DAO;
 
+import org.example.Model.Apprenant;
+import org.example.Model.Formateur;
+import org.example.Model.Secretaire;
+import org.example.Model.Users;
+
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public interface UserDao {
+    String create(Users user) throws SQLException;
+
+    String deleteById(int id) throws SQLException;
 
 
-    String createFormateur();
-
-    String createCondidate();
-
-    String createSecritaire();
+    String update(Users user) throws SQLException;
 
 
-    String deleteFormateurById();
+    ResultSet getByType(String type) throws SQLException;
 
-    String deleteCondidateById();
-
-    String deleteSecritaireById();
-
-
-    String updateFormateurById();
-
-    String updateCondidateById();
-
-    String updateSecritaireById();
-
-
-    ResultSet getAllFormateur();
-
-    ResultSet getAllCondidate();
-
-    ResultSet getAllSecritaire();
 
 }
