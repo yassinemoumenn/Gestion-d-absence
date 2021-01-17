@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connexion {
+public abstract class Connexion {
     private static String user = "root";
     private static String password = "";
     private static String url = "jdbc:mysql://localhost:3306/Gestion_Absence";

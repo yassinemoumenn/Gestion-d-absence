@@ -73,7 +73,6 @@ public class UserDaoImp extends Connexion implements UserDao{
             var sql = "SELECT * FROM Users WHERE type ='"+ type +"';";
             PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
             return stmt.executeQuery();
-
         } catch (Exception e) {
             e.getMessage();
         }finally {
