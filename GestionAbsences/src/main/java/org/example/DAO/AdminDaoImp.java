@@ -9,8 +9,9 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 
-public class AdminDaoImp extends Connexion implements AdminDao{
+public class AdminDaoImp extends Connexion implements AdminDao {
 
+    //role : get an user id (type student) and ref it to and class and sprciality
     @Override
     public String setApprenent(Apprenant apprenant) throws SQLException {
         try {
@@ -23,13 +24,14 @@ public class AdminDaoImp extends Connexion implements AdminDao{
             return "Done!";
         } catch (SQLException e) {
             return e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
                 connect().close();
             }
         }
     }
 
+    //Role: update class and speciality of an user type student
     @Override
     public String updateApprenent(Apprenant apprenant) throws SQLException {
         try {
@@ -42,13 +44,14 @@ public class AdminDaoImp extends Connexion implements AdminDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
                 Objects.requireNonNull(connect()).close();
             }
         }
     }
 
+    //Role: get an user id (type : Formature) and ref in into a class
     @Override
     public String setFormateur(Formateur formateur) throws SQLException {
         try {
@@ -60,13 +63,14 @@ public class AdminDaoImp extends Connexion implements AdminDao{
             return "Done!";
         } catch (SQLException e) {
             return e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
                 connect().close();
             }
         }
     }
 
+    //Role: update class of an user type Formateur
     @Override
     public String updateFormateur(Formateur formateur) throws SQLException {
         try {
@@ -78,8 +82,8 @@ public class AdminDaoImp extends Connexion implements AdminDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
                 Objects.requireNonNull(connect()).close();
             }
         }
