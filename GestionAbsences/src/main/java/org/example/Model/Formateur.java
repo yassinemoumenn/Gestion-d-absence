@@ -2,9 +2,9 @@ package org.example.Model;
 
 public class Formateur{
 
-    private int id;
-    private int user_id;
-    private int class_id;
+    private static int id;
+    private static int user_id;
+    private static int class_id;
 
     public Formateur(int user_id, int class_id) {
         this.user_id = user_id;
@@ -20,7 +20,7 @@ public class Formateur{
     public Formateur() {
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
@@ -28,7 +28,7 @@ public class Formateur{
         this.id = id;
     }
 
-    public int getUser_id() {
+    public static int getUser_id() {
         return user_id;
     }
 
@@ -36,7 +36,7 @@ public class Formateur{
         this.user_id = user_id;
     }
 
-    public int getClass_id() {
+    public static int getClass_id() {
         return class_id;
     }
 

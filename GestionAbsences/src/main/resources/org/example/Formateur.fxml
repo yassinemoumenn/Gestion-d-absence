@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="798.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Service.ServiceFormateur">
+   <children>
+      <TableView layoutX="-2.0" layoutY="206.0" prefHeight="597.0" prefWidth="1330.0">
+        <columns>
+          <TableColumn prefWidth="82.0" text="Id" />
+            <TableColumn minWidth="0.0" prefWidth="785.0" text="Nom et Prénom" />
+            <TableColumn prefWidth="157.0" text="Absent(e)" />
+            <TableColumn minWidth="0.0" prefWidth="140.0" text="Presént(e)" />
+            <TableColumn minWidth="0.0" prefWidth="165.0" text="Demi journée" />
+        </columns>
+      </TableView>
+      <VBox layoutX="4.0" layoutY="162.0" prefHeight="44.0" prefWidth="1320.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="                                                         Liste Des Etudiantes" wrappingWidth="1319.205078125">
+               <font>
+                  <Font name="Arial Black" size="26.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <Pane prefHeight="135.0" prefWidth="1332.0">
+         <children>
+            <ImageView fitHeight="135.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fill="#2f4859" layoutX="407.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenu" wrappingWidth="518.205078125">
+               <font>
+                  <Font name="Arial Black" size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
