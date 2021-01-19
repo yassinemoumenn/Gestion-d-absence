@@ -1,8 +1,6 @@
 package org.example;
 
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -13,14 +11,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.DAO.UserDao;
-import org.example.DAO.UserDaoImp;
 import org.example.Model.Users;
 import org.example.Service.ServiceApprenant;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -31,60 +26,87 @@ public class AdminPanel implements Initializable {
     public VBox formateuPanel;
     public VBox secrePanel;
     public TableView<Users> userTable;
-    public TableColumn<? extends Object, ? extends Object> student_id;
-    public TableColumn<? extends Object, ? extends Object> student_name;
-    public TableColumn<? extends Object, ? extends Object> student_email;
-    public TableColumn<? extends Object, ? extends Object> student_class;
+    public TableColumn student_id;
+    public TableColumn student_name;
+    public TableColumn student_email;
+    public TableColumn student_class;
+    public TableColumn formateur_id;
+    public TableColumn formateur_name;
+    public TableColumn formateur_email;
+    public TableColumn formateur_class;
+    public TableView formateurTable;
+    private int window = 1;
 
 
-    public void displayStude(MouseEvent mouseEvent) {
+    public void displayStude(MouseEvent mouseEvent) throws SQLException {
         studentPanel.setVisible(true);
         formateuPanel.setVisible(false);
         secrePanel.setVisible(false);
-
+        window = 1;
+        extracted();
 
     }
 
-    public void displayform(MouseEvent mouseEvent) {
+    public void displayform(MouseEvent mouseEvent) throws SQLException {
         studentPanel.setVisible(false);
         formateuPanel.setVisible(true);
         secrePanel.setVisible(false);
+        window = 2;
 
-
+        extracted();
     }
 
-    public void displaySere(MouseEvent mouseEvent) {
+    public void displaySere(MouseEvent mouseEvent) throws SQLException {
         studentPanel.setVisible(false);
         formateuPanel.setVisible(false);
         secrePanel.setVisible(true);
+        window = 3;
+        extracted();
     }
 
-    public void setNewUser(MouseEvent mouseEvent) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("setNewUser.fxml"));
-        stage.setTitle("Ajouté nevaeu utilisateur");
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
-
-
-    private void dislpayAprrenats() throws SQLException {
-
+    private void display(String type, TableColumn id, TableColumn name, TableColumn email, TableColumn c,TableView<Users> table) throws SQLException {
         ServiceApprenant usess = new ServiceApprenant();
-        student_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        student_name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
-        student_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
         //TODO display class insted of type
-        student_class.setCellValueFactory(new PropertyValueFactory<>("type"));
-        userTable.setItems(usess.collectApprenants());
+        c.setCellValueFactory(new PropertyValueFactory<>("type"));
+        table.setItems(usess.collectApprenants(type));
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            dislpayAprrenats();
+            extracted();
         } catch (SQLException throwables) {
             System.out.println(throwables.getMessage());
         }
+    }
+
+    private void extracted() throws SQLException {
+        if (window == 1){
+            display("Apprenant", student_id,student_name,student_email,student_class,userTable);
+        }else if (window == 2){
+            display("Formateur", formateur_id,formateur_name,formateur_email,formateur_class, formateurTable);
+        }
+    }
+
+    //pop for add new formateur
+    public void setNewUserFormateur(MouseEvent mouseEvent) throws IOException {
+        popUp("setNewFormateur");
+    }
+
+    //pop for add new student
+    public void setNewUser(MouseEvent mouseEvent) throws IOException {
+        popUp("setNewUser");
+    }
+
+
+    private void popUp(String pop) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource(pop + ".fxml"));
+        stage.setTitle("Ajouté nevaeu utilisateur");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

@@ -5,23 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GestionAbsences/src/main/resources/org/example/setNewFormateur.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/AdminPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/AdminDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/AdminDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/ClassesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/ClassesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/ClassesDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/ClassesDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/UserDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Model/Apprenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Model/Apprenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Service/ServiceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Service/ServiceAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Service/ServiceApprenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Service/ServiceApprenant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/SetNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/SetNewUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/AdminPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/AdminPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/AdminPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/DAO/AdminDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/DAO/AdminDaoImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/DAO/UserDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/DAO/UserDaoImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/Service/ServiceApprenant.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/Service/ServiceApprenant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/SetNewUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/SetNewUser.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,13 +26,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1n7l1aWnqaUbQJqOMUcm6L70uj7" />
@@ -118,6 +117,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.ServiceAdmin" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.ServiceAdmin" />

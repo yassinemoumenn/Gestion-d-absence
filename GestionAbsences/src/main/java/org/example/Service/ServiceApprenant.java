@@ -12,13 +12,14 @@ import java.sql.SQLException;
 public class ServiceApprenant {
 
 
-    public ObservableList<Users> collectApprenants() throws SQLException {
+    public ObservableList<Users> collectApprenants(String type) throws SQLException {
         ObservableList<Users> users = FXCollections.observableArrayList();
         UserDao dataSet = new UserDaoImp();
-        ResultSet rs = dataSet.getByType("Apprenant");
+        ResultSet rs = dataSet.getByType(type);
         while (rs.next()) {
             Users usr = new Users(rs.getString("full_name"), rs.getString("email"), rs.getString("password"), rs.getString("type"));
-             users.add(usr);
+            usr.setId(rs.getInt(1));
+            users.add(usr);
         }
         return users;
     }

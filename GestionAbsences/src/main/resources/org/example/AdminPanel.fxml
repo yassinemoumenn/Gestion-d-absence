@@ -38,15 +38,15 @@
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
+                        <Button mnemonicParsing="false"  onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
                     </children>
                 </HBox>
-                <TableView fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                <TableView fixedCellSize="0.0" fx:id="formateurTable" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ID" />
-                        <TableColumn prefWidth="290.0" text="Nom et premon" />
-                        <TableColumn prefWidth="385.0" text="Email" />
-                        <TableColumn prefWidth="289.0" text="classe" />
+                        <TableColumn fx:id="formateur_id" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="formateur_name" prefWidth="290.0" text="Nom et premon" />
+                        <TableColumn fx:id="formateur_email" prefWidth="385.0" text="Email" />
+                        <TableColumn fx:id="formateur_class" prefWidth="289.0" text="classe" />
                     </columns>
                 </TableView>
             </children>
