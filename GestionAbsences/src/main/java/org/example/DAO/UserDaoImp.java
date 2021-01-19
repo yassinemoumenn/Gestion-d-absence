@@ -8,8 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class UserDaoImp extends Connexion implements UserDao{
+public class UserDaoImp extends Connexion implements UserDao {
 
+
+    // Role: create new user
+    //info require: full name, email, password,type(student, formateur or secritier)
     @Override
     public String create(Users user) throws SQLException {
         try {
@@ -23,13 +26,14 @@ public class UserDaoImp extends Connexion implements UserDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
                 Objects.requireNonNull(connect()).close();
             }
         }
     }
 
+    // role: delete user by his id
     @Override
     public String deleteById(int id) throws SQLException {
         try {
@@ -40,13 +44,16 @@ public class UserDaoImp extends Connexion implements UserDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
                 Objects.requireNonNull(connect()).close();
             }
         }
     }
 
+
+    //role : update an user info
+    //info can update: email and password
     @Override
     public String update(Users user) throws SQLException {
         try {
@@ -59,24 +66,42 @@ public class UserDaoImp extends Connexion implements UserDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
                 Objects.requireNonNull(connect()).close();
             }
         }
     }
 
-
+    //role: get users by them type
+    //types is: Apprenent, Formateur, Secretaire.
     @Override
     public ResultSet getByType(String type) throws SQLException {
         try {
-            var sql = "SELECT * FROM Users WHERE type ='"+ type +"';";
+            var sql = "SELECT * FROM Users WHERE type ='" + type + "';";
             PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
             return stmt.executeQuery();
         } catch (Exception e) {
             e.getMessage();
-        }finally {
-            if(connect() != null){
+        } finally {
+            if (connect() != null) {
+                Objects.requireNonNull(connect()).close();
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public ResultSet getIndex(Users usr) throws SQLException {
+        try {
+            var sql = "SELECT * FROM Users WHERE email =?;";
+            PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
+            stmt.setString(1, usr.getEmail());
+            return stmt.executeQuery();
+        } catch (Exception e) {
+            e.getMessage();
+        } finally {
+            if (connect() != null) {
                 Objects.requireNonNull(connect()).close();
             }
         }

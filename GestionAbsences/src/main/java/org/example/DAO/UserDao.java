@@ -19,5 +19,7 @@ public interface UserDao {
 
     ResultSet getByType(String type) throws SQLException;
 
+    ResultSet  getIndex(Users usr) throws SQLException;
+
 
 }
