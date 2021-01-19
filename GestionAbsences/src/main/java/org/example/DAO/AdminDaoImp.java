@@ -15,11 +15,10 @@ public class AdminDaoImp extends Connexion implements AdminDao {
     @Override
     public String setApprenent(Apprenant apprenant) throws SQLException {
         try {
-            var sql = "INSERT INTO `Students` (`user_id`, `classe_id`, `speciality_id`) VALUES(?,?,?)";
+            var sql = "INSERT INTO `Students` (`user_id`, `classe_id`) VALUES(?,?);";
             PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
             stmt.setInt(1, apprenant.getUser_id());
             stmt.setInt(2, apprenant.getClass_id());
-            stmt.setInt(3, apprenant.getSpeciality_id());
             stmt.executeUpdate();
             return "Done!";
         } catch (SQLException e) {
@@ -31,15 +30,14 @@ public class AdminDaoImp extends Connexion implements AdminDao {
         }
     }
 
-    //Role: update class and speciality of an user type student
+    //Role: update class of an user type student
     @Override
     public String updateApprenent(Apprenant apprenant) throws SQLException {
         try {
-            var sql = "UPDATE Students SET `classe_id` = ?, `speciality_id`= ? WHERE id = ?";
+            var sql = "UPDATE Students SET `classe_id` = ? WHERE id = ?";
             PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
             stmt.setInt(1, apprenant.getClass_id());
-            stmt.setInt(2, apprenant.getSpeciality_id());
-            stmt.setInt(3, apprenant.getId());
+            stmt.setInt(2, apprenant.getId());
             stmt.executeUpdate();
             return "Done!";
         } catch (Exception e) {

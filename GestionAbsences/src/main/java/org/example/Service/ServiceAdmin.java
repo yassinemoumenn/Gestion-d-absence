@@ -24,13 +24,6 @@ public class ServiceAdmin {
 //        System.out.println(newUser.update(user));
 
 
-        Apprenant apprenant = new Apprenant(2,1, 2, 1);
-//        Formateur formateur =new Formateur(1, 2, 2);
-
-
-        AdminDao setap = new AdminDaoImp();
-        System.out.println(setap.updateApprenent(apprenant));
-
     }
 
 }

@@ -18,16 +18,15 @@
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="41.0" onMouseClicked="#setNewUser" prefWidth="125.0" text="Ajouter " />
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
                     </children>
                 </HBox>
-                <TableView fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                <TableView fx:id="userTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ID" />
-                        <TableColumn prefWidth="218.0" text="Nom et premon" />
-                        <TableColumn prefWidth="322.0" text="Email" />
-                        <TableColumn prefWidth="197.0" text="classe" />
-                        <TableColumn prefWidth="227.0" text="Specialité" />
+                        <TableColumn fx:id="student_id" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="student_name" prefWidth="328.0" text="Nom et premon" />
+                        <TableColumn fx:id="student_email" prefWidth="476.0" text="Email" />
+                        <TableColumn fx:id="student_class" prefWidth="160.0" text="classe" />
                     </columns>
                 </TableView>
             </children>

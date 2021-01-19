@@ -91,4 +91,21 @@ public class UserDaoImp extends Connexion implements UserDao {
         return null;
     }
 
+    @Override
+    public ResultSet getIndex(Users usr) throws SQLException {
+        try {
+            var sql = "SELECT * FROM Users WHERE email =?;";
+            PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
+            stmt.setString(1, usr.getEmail());
+            return stmt.executeQuery();
+        } catch (Exception e) {
+            e.getMessage();
+        } finally {
+            if (connect() != null) {
+                Objects.requireNonNull(connect()).close();
+            }
+        }
+        return null;
+    }
+
 }
