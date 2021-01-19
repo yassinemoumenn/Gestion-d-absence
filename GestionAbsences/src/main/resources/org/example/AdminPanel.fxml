@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="755.0" prefWidth="1254.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AdminPanel">
+    <children>
+        <VBox prefHeight="755.0" prefWidth="184.0" style="-fx-background-color: #191970;">
+            <children>
+                <Button mnemonicParsing="false" onMouseClicked="#displayStude" prefHeight="46.0" prefWidth="210.0" text="Apprenents" />
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#displayform" prefHeight="46.0" prefWidth="210.0" text="Formateurs" />
+                <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#displaySere" prefHeight="46.0" prefWidth="210.0" text="Secretaires" />
+                <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="210.0" text="Log out" />
+            </children>
+        </VBox>
+        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="41.0" onMouseClicked="#setNewUser" prefWidth="125.0" text="Ajouter " />
+                    </children>
+                </HBox>
+                <TableView fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="218.0" text="Nom et premon" />
+                        <TableColumn prefWidth="322.0" text="Email" />
+                        <TableColumn prefWidth="197.0" text="classe" />
+                        <TableColumn prefWidth="227.0" text="Specialité" />
+                    </columns>
+                </TableView>
+            </children>
+            <padding>
+                <Insets left="15.0" right="15.0" />
+            </padding>
+        </VBox>
+        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
+                    </children>
+                </HBox>
+                <TableView fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="290.0" text="Nom et premon" />
+                        <TableColumn prefWidth="385.0" text="Email" />
+                        <TableColumn prefWidth="289.0" text="classe" />
+                    </columns>
+                </TableView>
+            </children>
+            <padding>
+                <Insets left="15.0" right="15.0" />
+            </padding>
+        </VBox>
+        <VBox fx:id="secrePanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
+                    </children>
+                </HBox>
+                <TableView fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="526.0" text="Nom et premon" />
+                        <TableColumn prefWidth="438.0" text="Email" />
+                    </columns>
+                </TableView>
+            </children>
+            <padding>
+                <Insets left="15.0" right="15.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
