@@ -1,8 +1,6 @@
 package org.example.DAO;
 
 import org.example.Model.Formateur;
-import org.example.DAO.FormateurDao;
-import org.example.Model.Users;
 import org.example.MysqlConnect.Connexion;
 
 import java.sql.PreparedStatement;
@@ -47,7 +45,7 @@ public abstract class FormateurDaoImp extends Connexion implements FormateurDao 
     }
 
     @Override
-    public int set(Formateur Formateur) throws SQLException {
+    public String set(Formateur Formateur) throws SQLException {
         try {
             String sql = "INSERT INTO Teachers (`id`, `user_id`,`classe_id`) VALUES (?,?);";
             PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
