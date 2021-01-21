@@ -10,8 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ServiceApprenant {
-
-
     public ObservableList<Users> collectApprenants(String type) throws SQLException {
         ObservableList<Users> users = FXCollections.observableArrayList();
         UserDao dataSet = new UserDaoImp();

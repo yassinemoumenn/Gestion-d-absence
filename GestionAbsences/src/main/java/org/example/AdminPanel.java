@@ -1,6 +1,5 @@
 package org.example;
 
-
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -13,15 +12,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.Model.Users;
 import org.example.Service.ServiceApprenant;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdminPanel implements Initializable {
-
-
     public VBox studentPanel;
     public VBox formateuPanel;
     public VBox secrePanel;
@@ -35,6 +31,12 @@ public class AdminPanel implements Initializable {
     public TableColumn formateur_email;
     public TableColumn formateur_class;
     public TableView formateurTable;
+    public TableView secreTable;
+
+    public TableColumn sec_id;
+    public TableColumn sec_name;
+    public TableColumn sec_email;
+
     private int window = 1;
 
 
@@ -64,7 +66,12 @@ public class AdminPanel implements Initializable {
         extracted();
     }
 
-    private void display(String type, TableColumn id, TableColumn name, TableColumn email, TableColumn c,TableView<Users> table) throws SQLException {
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    private void display(String type, TableColumn id, TableColumn name, TableColumn email, TableColumn c, TableView<Users> table) throws SQLException {
         ServiceApprenant usess = new ServiceApprenant();
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
@@ -73,6 +80,14 @@ public class AdminPanel implements Initializable {
         c.setCellValueFactory(new PropertyValueFactory<>("type"));
         table.setItems(usess.collectApprenants(type));
     }
+    private void display(String type, TableColumn id, TableColumn name, TableColumn email,TableView<Users> table) throws SQLException {
+        ServiceApprenant usess = new ServiceApprenant();
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        table.setItems(usess.collectApprenants(type));
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -88,6 +103,8 @@ public class AdminPanel implements Initializable {
             display("Apprenant", student_id,student_name,student_email,student_class,userTable);
         }else if (window == 2){
             display("Formateur", formateur_id,formateur_name,formateur_email,formateur_class, formateurTable);
+        }else {
+            display("Secretaire", sec_id,sec_name,sec_email,secreTable);
         }
     }
 
@@ -99,9 +116,13 @@ public class AdminPanel implements Initializable {
     //pop for add new student
     public void setNewUser(MouseEvent mouseEvent) throws IOException {
         popUp("setNewUser");
+
     }
 
+    public void setNewSec(MouseEvent mouseEvent) throws IOException {
+        popUp("setNewSecretaire");
 
+    }
     private void popUp(String pop) throws IOException {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(pop + ".fxml"));
@@ -109,4 +130,6 @@ public class AdminPanel implements Initializable {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+
 }

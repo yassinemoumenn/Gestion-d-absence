@@ -14,19 +14,19 @@
                 <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="210.0" text="Log out" />
             </children>
         </VBox>
-        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
                     </children>
                 </HBox>
-                <TableView fx:id="userTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                <TableView fx:id="userTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="635.0" prefWidth="1040.0">
                     <columns>
                         <TableColumn fx:id="student_id" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="student_name" prefWidth="328.0" text="Nom et premon" />
-                        <TableColumn fx:id="student_email" prefWidth="476.0" text="Email" />
-                        <TableColumn fx:id="student_class" prefWidth="160.0" text="classe" />
+                        <TableColumn fx:id="student_email" prefWidth="458.0" text="Email" />
+                        <TableColumn fx:id="student_class" prefWidth="178.0" text="classe" />
                     </columns>
                 </TableView>
             </children>
@@ -34,14 +34,14 @@
                 <Insets left="15.0" right="15.0" />
             </padding>
         </VBox>
-        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
-                        <Button mnemonicParsing="false"  onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
                     </children>
                 </HBox>
-                <TableView fixedCellSize="0.0" fx:id="formateurTable" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                <TableView fx:id="formateurTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="644.0" prefWidth="1040.0">
                     <columns>
                         <TableColumn fx:id="formateur_id" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="formateur_name" prefWidth="290.0" text="Nom et premon" />
@@ -58,14 +58,14 @@
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
+                        <Button mnemonicParsing="false" prefHeight="41.0" onMouseClicked="#setNewSec" prefWidth="125.0" text="Ajouter" />
                     </children>
                 </HBox>
-                <TableView fixedCellSize="0.0" minWidth="-Infinity" prefHeight="206.0" prefWidth="1006.0">
+                <TableView fx:id="secreTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0" prefWidth="1040.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ID" />
-                        <TableColumn prefWidth="526.0" text="Nom et premon" />
-                        <TableColumn prefWidth="438.0" text="Email" />
+                        <TableColumn fx:id="sec_id" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="sec_name" prefWidth="526.0" text="Nom et premon" />
+                        <TableColumn fx:id="sec_email" prefWidth="438.0" text="Email" />
                     </columns>
                 </TableView>
             </children>
