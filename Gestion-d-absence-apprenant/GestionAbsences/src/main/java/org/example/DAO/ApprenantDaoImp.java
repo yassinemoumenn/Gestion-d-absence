@@ -4,6 +4,7 @@ import org.example.Model.Apprenant;
 import org.example.MysqlConnect.Connexion;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
@@ -13,15 +14,13 @@ public class ApprenantDaoImp implements ApprenantDao {
 
 
     @Override
-    public Long getById(Long id) throws ClassNotFoundException, SQLException {
+    public ResultSet getById(int id) throws ClassNotFoundException, SQLException {
         try {
-            String sql = "SELECT * FROM `users` WHERE id= ?  ";
-
-
+            String sql = "SELECT * FROM `Students` WHERE user_id= ? ";
             PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
-            stmt.executeQuery();
+            stmt.setInt(1, id);
             System.out.printf("Done");
-            return id;
+            return stmt.executeQuery();
         } catch (SQLException e) {
             System.out.printf("Not Done");
         }finally {
@@ -29,7 +28,7 @@ public class ApprenantDaoImp implements ApprenantDao {
                 Connexion.connect().close();
             }
         }
-        return id;
+        return null;
     }
     @Override
     public String setApprenant(Apprenant apprenant) throws SQLException {

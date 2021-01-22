@@ -2,24 +2,33 @@ package org.example.Service;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.example.DAO.UserDao;
-import org.example.DAO.UserDaoImp;
-import org.example.Model.Users;
+import org.example.DAO.*;
+import org.example.Model.StudentV2;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ServiceApprenant {
-    public ObservableList<Users> collectApprenants(String type) throws SQLException {
-        ObservableList<Users> users = FXCollections.observableArrayList();
-
+    public ObservableList<StudentV2> collectApprenants(String type) throws SQLException, ClassNotFoundException {
+        ObservableList<StudentV2> users = FXCollections.observableArrayList();
         UserDao dataSet = new UserDaoImp();
         ResultSet rs = dataSet.getByType(type);
         while (rs.next()) {
-            Users usr = new Users(rs.getString("full_name"), rs.getString("email"), rs.getString("password"), rs.getString("type"));
-            usr.setId(rs.getInt(1));
+//            Users usr = new Users(rs.getString("full_name"), rs.getString("email"), rs.getString("password"), rs.getString("type"));
+//            usr.setId(rs.getInt(1));
 
-            users.add(usr);
+            ApprenantDao appre = new ApprenantDaoImp();
+            ResultSet apprenant = appre.getById(rs.getInt(1));
+            if (apprenant.next()) {
+                ClassesDAO clas = new ClassesDAOImpl();
+                ResultSet cla = clas.getClassById(apprenant.getInt("classe_id"));
+                if (cla.next()) {
+                    StudentV2 usr = new StudentV2(rs.getInt(1), rs.getString("full_name"), rs.getString("email"), cla.getString("classe"));
+                    users.add(usr);
+                }
+            }
+
+
         }
         return users;
     }

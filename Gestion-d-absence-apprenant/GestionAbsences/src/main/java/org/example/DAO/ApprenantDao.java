@@ -15,7 +15,7 @@ public interface ApprenantDao {
 
    String getBySpeciality(String speciality) throws ClassNotFoundException, SQLException;
 
-    Long getById(Long id) throws ClassNotFoundException, SQLException;
+    ResultSet getById(int id) throws ClassNotFoundException, SQLException;
 
 
 

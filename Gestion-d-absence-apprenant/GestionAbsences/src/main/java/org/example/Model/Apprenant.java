@@ -5,9 +5,6 @@ public class Apprenant {
     private int user_id;
     private int class_id;
 
-
-<<<<<<< HEAD:Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Model/Apprenant.java
-=======
     public Apprenant() {
     }
 
@@ -23,7 +20,6 @@ public class Apprenant {
         this.class_id = class_id;
     }
 
->>>>>>> administrateur:GestionAbsences/src/main/java/org/example/Model/Apprenant.java
     public int getId() {
         return id;
     }
@@ -53,7 +49,7 @@ public class Apprenant {
         this.id = id;
         this.user_id = user_id;
         this.class_id = class_id;
-        this.speciality_id = speciality_id;
+
     }
 }
 

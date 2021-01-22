@@ -36,7 +36,19 @@ public class Login{
 //        preparedStatement.setString(1, email);
 //        preparedStatement.setString(2, mdp);
 //
-//        ResultSet resultSet = preparedStatement.executeQuery();
+//        ResultSet resultSet = pr
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//        eparedStatement.executeQuery();
 //        if (resultSet.next()){
 //            switch (resultSet.getString("type")){
 //                case "Admin":
