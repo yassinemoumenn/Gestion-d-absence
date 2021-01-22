@@ -36,6 +36,7 @@ public class AdminPanel implements Initializable {
     public TableColumn sec_id;
     public TableColumn sec_name;
     public TableColumn sec_email;
+    public TableColumn formateur_class1;
 
     private int window = 1;
 

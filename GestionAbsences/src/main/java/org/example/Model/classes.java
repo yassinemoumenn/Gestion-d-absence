@@ -2,9 +2,18 @@ package org.example.Model;
 
 public class classes {
     private int id;
-    private int classe;
 
-    public classes(int id, int classe) {
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+
+    private String classe;
+
+    public classes(int id, String classe) {
         this.id = id;
         this.classe = classe;
     }
@@ -17,11 +26,5 @@ public class classes {
         this.id = id;
     }
 
-    public int getClasse() {
-        return classe;
-    }
 
-    public void setClasse(int classe) {
-        this.classe = classe;
-    }
 }

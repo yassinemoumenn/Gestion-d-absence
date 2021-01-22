@@ -14,7 +14,7 @@
                 <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="210.0" text="Log out" />
             </children>
         </VBox>
-        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
@@ -34,7 +34,7 @@
                 <Insets left="15.0" right="15.0" />
             </padding>
         </VBox>
-        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
@@ -45,8 +45,8 @@
                     <columns>
                         <TableColumn fx:id="formateur_id" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="formateur_name" prefWidth="290.0" text="Nom et premon" />
-                        <TableColumn fx:id="formateur_email" prefWidth="385.0" text="Email" />
-                        <TableColumn fx:id="formateur_class" prefWidth="289.0" text="classe" />
+                        <TableColumn fx:id="formateur_email" prefWidth="469.0" text="Email" />
+                        <TableColumn fx:id="formateur_class" prefWidth="204.0" text="classe" />
                     </columns>
                 </TableView>
             </children>
@@ -58,7 +58,7 @@
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="41.0" onMouseClicked="#setNewSec" prefWidth="125.0" text="Ajouter" />
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewSec" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
                     </children>
                 </HBox>
                 <TableView fx:id="secreTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0" prefWidth="1040.0">
