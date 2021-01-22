@@ -10,8 +10,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.example.DAO.UserDao;
+import org.example.DAO.UserDaoImp;
 import org.example.Model.StudentV2;
+import org.example.Model.Users;
 import org.example.Service.ServiceApprenant;
+import org.example.Service.ServiceFormateur;
+import org.example.Service.ServiceSecretaire;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,21 +28,21 @@ public class AdminPanel implements Initializable {
     public VBox formateuPanel;
     public VBox secrePanel;
     public TableView<StudentV2> userTable;
-    public TableColumn student_id;
+
     public TableColumn student_name;
     public TableColumn student_email;
     public TableColumn student_class;
-    public TableColumn formateur_id;
+
     public TableColumn formateur_name;
     public TableColumn formateur_email;
     public TableColumn formateur_class;
-    public TableView formateurTable;
-    public TableView secreTable;
 
-    public TableColumn sec_id;
+    public TableView<StudentV2>  formateurTable;
+    public TableView<Users>  secreTable;
+
     public TableColumn sec_name;
     public TableColumn sec_email;
-    public TableColumn formateur_class1;
+
 
     private int window = 1;
 
@@ -73,22 +78,28 @@ public class AdminPanel implements Initializable {
         return super.clone();
     }
 
-    private void display(String type, TableColumn id, TableColumn name, TableColumn email, TableColumn c, TableView<StudentV2> table) throws SQLException, ClassNotFoundException {
+    private void display(String type, TableColumn name, TableColumn email, TableColumn c, TableView<StudentV2> table) throws SQLException, ClassNotFoundException {
         ServiceApprenant usess = new ServiceApprenant();
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
         name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        //TODO display class insted of type
         c.setCellValueFactory(new PropertyValueFactory<>("classe"));
         table.setItems(usess.collectApprenants(type));
     }
 
-    private void display(String type, TableColumn id, TableColumn name, TableColumn email, TableView<StudentV2> table) throws SQLException, ClassNotFoundException {
-        ServiceApprenant usess = new ServiceApprenant();
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+    private void display(String type, TableColumn name, TableColumn email, TableColumn c, TableView<StudentV2> table, int id) throws SQLException, ClassNotFoundException {
+        ServiceFormateur usess = new ServiceFormateur();
         name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        table.setItems(usess.collectApprenants(type));
+        c.setCellValueFactory(new PropertyValueFactory<>("classe"));
+        table.setItems(usess.collectFormateur(type));
+        System.out.println(id);
+    }
+
+    private void display(String type, TableColumn name, TableColumn email, TableView<Users> table) throws SQLException, ClassNotFoundException {
+        ServiceSecretaire usess = new ServiceSecretaire();
+        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        table.setItems(usess.collectSecretiare(type));
     }
 
 
@@ -103,11 +114,11 @@ public class AdminPanel implements Initializable {
 
     private void extracted() throws SQLException, ClassNotFoundException {
         if (window == 1) {
-            display("Apprenant", student_id, student_name, student_email, student_class, userTable);
+            display("Apprenant", student_name, student_email, student_class, userTable);
         } else if (window == 2) {
-            display("Formateur", formateur_id, formateur_name, formateur_email, formateur_class, formateurTable);
+            display("Formateur", formateur_name, formateur_email, formateur_class, formateurTable, 1);
         } else {
-            display("Secretaire", sec_id, sec_name, sec_email, secreTable);
+            display("Secretaire", sec_name, sec_email, secreTable);
         }
     }
 
@@ -136,4 +147,21 @@ public class AdminPanel implements Initializable {
     }
 
 
+    public void DeleteUser(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        UserDao deleteUser = new UserDaoImp();
+        deleteUser.deleteById(userTable.getSelectionModel().getSelectedItem().getId());
+        extracted();
+    }
+
+    public void DeleteFormatuer(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        UserDao deleteUser = new UserDaoImp();
+        deleteUser.deleteById(formateurTable.getSelectionModel().getSelectedItem().getId());
+        extracted();
+    }
+
+    public void DeleteSecre(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        UserDao deleteUser = new UserDaoImp();
+        deleteUser.deleteById(secreTable.getSelectionModel().getSelectedItem().getId());
+        extracted();
+    }
 }

@@ -2,8 +2,10 @@ package org.example.Service;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
 import org.example.DAO.*;
 import org.example.Model.StudentV2;
+import org.example.Model.Users;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,9 +16,6 @@ public class ServiceApprenant {
         UserDao dataSet = new UserDaoImp();
         ResultSet rs = dataSet.getByType(type);
         while (rs.next()) {
-//            Users usr = new Users(rs.getString("full_name"), rs.getString("email"), rs.getString("password"), rs.getString("type"));
-//            usr.setId(rs.getInt(1));
-
             ApprenantDao appre = new ApprenantDaoImp();
             ResultSet apprenant = appre.getById(rs.getInt(1));
             if (apprenant.next()) {
@@ -27,8 +26,6 @@ public class ServiceApprenant {
                     users.add(usr);
                 }
             }
-
-
         }
         return users;
     }
