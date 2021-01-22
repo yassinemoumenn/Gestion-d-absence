@@ -28,31 +28,31 @@ public class Login{
     private void login() throws IOException, SQLException {
 
 
+//
+//        String email = EmailInput.getText();
+//        String mdp = mdpInput.getText();
+//        Connection conn = Connexion.connect();
+//        PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM `users` WHERE email= ? && password = ?");
+//        preparedStatement.setString(1, email);
+//        preparedStatement.setString(2, mdp);
+//
+//        ResultSet resultSet = preparedStatement.executeQuery();
+//        if (resultSet.next()){
+//            switch (resultSet.getString("type")){
+//                case "Admin":
+//                    App.setRoot("admin");
+//                    break;
+//                case "Secretaire":
+//                    App.setRoot("secretaire");
+//                    break;
+//                case "Formateur":
+//                    App.setRoot("formateur");
+//                    break;
+//                case "Apprenant":
+//                    App.setRoot("Apprenant");
+//                    break;
+//
+//            }
 
-        String email = EmailInput.getText();
-        String mdp = mdpInput.getText();
-        Connection conn = Connexion.connect();
-        PreparedStatement preparedStatement = conn.prepareStatement("SELECT * FROM `users` WHERE email= ? && password = ?");
-        preparedStatement.setString(1, email);
-        preparedStatement.setString(2, mdp);
-
-        ResultSet resultSet = preparedStatement.executeQuery();
-        if (resultSet.next()){
-            switch (resultSet.getString("type")){
-                case "Admin":
-                    App.setRoot("admin");
-                    break;
-                case "Secretaire":
-                    App.setRoot("secretaire");
-                    break;
-                case "Formateur":
-                    App.setRoot("formateur");
-                    break;
-                case "Apprenant":
-                    App.setRoot("Apprenant");
-                    break;
-
-            }
-
-}}
+}
 }
