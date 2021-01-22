@@ -12,7 +12,7 @@ public interface FormateurDao {
 
     ResultSet getAll() throws SQLException;
 
-    String setApprenent(Apprenant apprenant) throws SQLException;
+   // String setApprenent(Apprenant apprenant) throws SQLException;
 
     String setAbsence(Absences absences) throws SQLException;
 

@@ -1,6 +1,6 @@
 package org.example.Model;
 
-public class Formateur extends Users {
+public class Formateur  extends Users{
 
     private int id_formateur;
     private int user_id;
@@ -10,8 +10,7 @@ public class Formateur extends Users {
 
     }
 
-    public Formateur(String full_name, String email, String password, String type, int id_formateur, int user_id, int class_id) {
-        super(full_name, email, password, type);
+    public Formateur(int id_formateur, int user_id, int class_id) {
         this.id_formateur = id_formateur;
         this.user_id = user_id;
         this.class_id = class_id;

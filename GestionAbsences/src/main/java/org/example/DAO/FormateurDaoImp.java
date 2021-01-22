@@ -3,10 +3,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.example.Model.Absences;
 import org.example.Model.AffichageStudent;
-import org.example.Model.Apprenant;
 import org.example.MysqlConnect.Connexion;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Objects;
 
 
@@ -24,11 +26,11 @@ public class FormateurDaoImp extends Connexion implements FormateurDao{
         return null;
     }
 
-    @Override
+    /*@Override
     public String setApprenent(Apprenant apprenant) throws SQLException {
         return null;
     }
-
+*/
     @Override
     public String setAbsence(Absences absences) throws SQLException {
         return null;
@@ -49,7 +51,7 @@ public class FormateurDaoImp extends Connexion implements FormateurDao{
         ObservableList<AffichageStudent> AbsenceStudents= FXCollections.observableArrayList();
        // Connection connect = null;
         try {
-            String requete= "SELECT full_name from Users,students WHERE Users.id=Students.user_id and type=`students`";
+            String requete= "SELECT full_name From Users WHERE Users.id=Students.user_id and type=`students`";
             PreparedStatement statement = Objects.requireNonNull(connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
             AffichageStudent affichageStudent;
