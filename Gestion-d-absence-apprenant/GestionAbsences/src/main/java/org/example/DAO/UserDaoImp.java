@@ -117,10 +117,9 @@ public class UserDaoImp  implements UserDao{
                 String sql = "SELECT * FROM `Users` WHERE id= ? ";
                 PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
                 stmt.setInt(1, id);
-                System.out.printf("Done");
                 return stmt.executeQuery();
             } catch (SQLException e) {
-                System.out.printf("Not Done");
+                System.out.println(e.getMessage());
             }finally {
                 if(Connexion.connect() != null){
                     Connexion.connect().close();

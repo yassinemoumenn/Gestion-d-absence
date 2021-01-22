@@ -37,8 +37,8 @@ public class AdminPanel implements Initializable {
     public TableColumn formateur_email;
     public TableColumn formateur_class;
 
-    public TableView<StudentV2>  formateurTable;
-    public TableView<Users>  secreTable;
+    public TableView<StudentV2> formateurTable;
+    public TableView<Users> secreTable;
 
     public TableColumn sec_name;
     public TableColumn sec_email;
@@ -78,31 +78,6 @@ public class AdminPanel implements Initializable {
         return super.clone();
     }
 
-    private void display(String type, TableColumn name, TableColumn email, TableColumn c, TableView<StudentV2> table) throws SQLException, ClassNotFoundException {
-        ServiceApprenant usess = new ServiceApprenant();
-        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
-        email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        c.setCellValueFactory(new PropertyValueFactory<>("classe"));
-        table.setItems(usess.collectApprenants(type));
-    }
-
-    private void display(String type, TableColumn name, TableColumn email, TableColumn c, TableView<StudentV2> table, int id) throws SQLException, ClassNotFoundException {
-        ServiceFormateur usess = new ServiceFormateur();
-        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
-        email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        c.setCellValueFactory(new PropertyValueFactory<>("classe"));
-        table.setItems(usess.collectFormateur(type));
-        System.out.println(id);
-    }
-
-    private void display(String type, TableColumn name, TableColumn email, TableView<Users> table) throws SQLException, ClassNotFoundException {
-        ServiceSecretaire usess = new ServiceSecretaire();
-        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
-        email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        table.setItems(usess.collectSecretiare(type));
-    }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -114,11 +89,14 @@ public class AdminPanel implements Initializable {
 
     private void extracted() throws SQLException, ClassNotFoundException {
         if (window == 1) {
-            display("Apprenant", student_name, student_email, student_class, userTable);
+            ServiceApprenant usess = new ServiceApprenant();
+            usess.display("Apprenant", student_name, student_email, student_class, userTable);
         } else if (window == 2) {
-            display("Formateur", formateur_name, formateur_email, formateur_class, formateurTable, 1);
+            ServiceFormateur usess = new ServiceFormateur();
+            usess.display("Formateur", formateur_name, formateur_email, formateur_class, formateurTable, 1);
         } else {
-            display("Secretaire", sec_name, sec_email, secreTable);
+            ServiceSecretaire usess = new ServiceSecretaire();
+            usess.display("Secretaire", sec_name, sec_email, secreTable);
         }
     }
 
@@ -149,19 +127,14 @@ public class AdminPanel implements Initializable {
 
     public void DeleteUser(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         UserDao deleteUser = new UserDaoImp();
-        deleteUser.deleteById(userTable.getSelectionModel().getSelectedItem().getId());
+        if (window == 1) {
+            deleteUser.deleteById(userTable.getSelectionModel().getSelectedItem().getId());
+        } else if (window == 2) {
+            deleteUser.deleteById(formateurTable.getSelectionModel().getSelectedItem().getId());
+        } else {
+            deleteUser.deleteById(secreTable.getSelectionModel().getSelectedItem().getId());
+        }
         extracted();
     }
 
-    public void DeleteFormatuer(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
-        UserDao deleteUser = new UserDaoImp();
-        deleteUser.deleteById(formateurTable.getSelectionModel().getSelectedItem().getId());
-        extracted();
-    }
-
-    public void DeleteSecre(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
-        UserDao deleteUser = new UserDaoImp();
-        deleteUser.deleteById(secreTable.getSelectionModel().getSelectedItem().getId());
-        extracted();
-    }
 }

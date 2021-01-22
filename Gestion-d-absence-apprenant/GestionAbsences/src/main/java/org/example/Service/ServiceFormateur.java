@@ -2,6 +2,9 @@ package org.example.Service;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.DAO.*;
 import org.example.Model.StudentV2;
 
@@ -9,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ServiceFormateur {
-    public ObservableList<StudentV2> collectFormateur(String type) throws SQLException, ClassNotFoundException {
+    private ObservableList<StudentV2> collectFormateur(String type) throws SQLException, ClassNotFoundException {
         ObservableList<StudentV2> users = FXCollections.observableArrayList();
         UserDao dataSet = new UserDaoImp();
         ResultSet rs = dataSet.getByType(type);
@@ -29,4 +32,12 @@ public class ServiceFormateur {
         }
         return users;
     }
+    public void display(String type, TableColumn name, TableColumn email, TableColumn c, TableView<StudentV2> table, int id) throws SQLException, ClassNotFoundException {
+        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        c.setCellValueFactory(new PropertyValueFactory<>("classe"));
+        table.setItems(this.collectFormateur(type));
+        System.out.println(id);
+    }
+
 }
