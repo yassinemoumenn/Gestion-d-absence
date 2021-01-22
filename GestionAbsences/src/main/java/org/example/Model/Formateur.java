@@ -1,34 +1,31 @@
 package org.example.Model;
 
-public class Formateur{
+public class Formateur extends Users {
 
-    private static int id;
-    private static int user_id;
-    private static int class_id;
+    private int id_formateur;
+    private int user_id;
+    private int class_id;
 
-    public Formateur(int user_id, int class_id) {
+    public Formateur(){
+
+    }
+
+    public Formateur(String full_name, String email, String password, String type, int id_formateur, int user_id, int class_id) {
+        super(full_name, email, password, type);
+        this.id_formateur = id_formateur;
         this.user_id = user_id;
         this.class_id = class_id;
     }
 
-    public Formateur(int id, int user_id, int class_id) {
-        this.id = id;
-        this.user_id = user_id;
-        this.class_id = class_id;
+    public int getId_formateur() {
+        return id_formateur;
     }
 
-    public Formateur() {
+    public void setId_formateur(int id_formateur) {
+        this.id_formateur = id_formateur;
     }
 
-    public static int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public static int getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
@@ -36,7 +33,7 @@ public class Formateur{
         this.user_id = user_id;
     }
 
-    public static int getClass_id() {
+    public int getClass_id() {
         return class_id;
     }
 

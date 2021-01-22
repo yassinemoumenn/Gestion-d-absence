@@ -5,7 +5,10 @@ module org.example {
     requires java.desktop;
     requires mysql.connector.java;
     requires rt;
+    requires jfxrt;
 
     opens org.example to javafx.fxml;
     exports org.example;
+    opens org.example.Model to javafx.fxml;
+    exports  org.example.Model;
 }

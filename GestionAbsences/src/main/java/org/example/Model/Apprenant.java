@@ -1,6 +1,6 @@
 package org.example.Model;
 
-public class Apprenant {
+public class Apprenant extends Users{
     private int id;
     private int user_id;
     private int class_id;
