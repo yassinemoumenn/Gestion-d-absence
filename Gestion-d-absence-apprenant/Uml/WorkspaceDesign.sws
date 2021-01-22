@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes" Selected="Yes">
+		<Model Expanded="Yes" ID="{06928B71-D2DE-4005-9B64-44665385A2BC}" Name="GestionAbcences" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="../GestionAbcences/GestionAbcences.prj"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>

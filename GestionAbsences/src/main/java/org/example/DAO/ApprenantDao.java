@@ -10,4 +10,5 @@ import java.util.Objects;
 public interface ApprenantDao{
     ResultSet getByUserId(int id) throws SQLException;
 
+
 }
