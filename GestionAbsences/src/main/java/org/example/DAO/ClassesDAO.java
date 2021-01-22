@@ -7,4 +7,5 @@ public interface ClassesDAO {
 
     ResultSet getClasses() throws SQLException;
     ResultSet getIndexof(String cl) throws SQLException;
+    ResultSet getClassById(int id) throws   SQLException;
 }

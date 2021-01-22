@@ -40,4 +40,21 @@ public class ClassesDAOImpl extends Connexion implements ClassesDAO {
         }
         return null;
     }
+
+    @Override
+    public ResultSet getClassById(int id) throws SQLException {
+        try {
+            var sql = "SELECT classe FROM classes WHERE id = ?;";
+            PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
+            stmt.setInt(1, id);
+            return stmt.executeQuery();
+        } catch (Exception e) {
+            e.getMessage();
+        } finally {
+            if (connect() != null) {
+                Objects.requireNonNull(connect()).close();
+            }
+        }
+        return null;
+    }
 }
