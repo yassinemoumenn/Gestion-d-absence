@@ -12,8 +12,8 @@ import org.example.Model.AffichageStudent;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+public abstract class FormateurController implements Initializable {
 
-public class FormateurController implements Initializable {
 
     @FXML
     private TableView<AffichageStudent> TableView;
@@ -39,14 +39,14 @@ public class FormateurController implements Initializable {
 
     }
 
-    public ObservableList<AffichageStudent> getAllApprenants() throws SQLException, ClassNotFoundException{
-        FormateurDaoImp formateur=new  FormateurDaoImp();
+    public ObservableList<AffichageStudent> getAllApprenants() throws SQLException, ClassNotFoundException {
+        FormateurDaoImp formateur = new FormateurDaoImp();
         ObservableList<AffichageStudent> apprenantList = formateur.AfficheStudentName();
 
         return apprenantList;
     }
 
-    public void showApprenants() throws SQLException, ClassNotFoundException{
+    public void showApprenants() throws SQLException, ClassNotFoundException {
         ObservableList<AffichageStudent> list = getAllApprenants();
 
         colfullname.setCellValueFactory(new PropertyValueFactory<AffichageStudent, String>("full_name"));
@@ -54,5 +54,4 @@ public class FormateurController implements Initializable {
 
         TableView.setItems(list);
     }
-
 }
