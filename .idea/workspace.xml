@@ -22,15 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/FormateurDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/FormateurDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/FormateurDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/FormateurDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Model/Formateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/Model/Formateur.java" afterDir="false" />
-    </list>
+    <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +51,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1n7l1aWnqaUbQJqOMUcm6L70uj7" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -74,7 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/test-main/test-main/GestionAbsences" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/15.0.1/javafx-fxml-15.0.1.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -233,5 +225,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="348" y="49" width="585" height="592" key="find.popup/0.0.1280.689/1920.0.1024.738@0.0.1280.689" timestamp="1611278075108" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GestionAbsences$App.ic" NAME="App Coverage Results" MODIFIED="1611263692855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
   </component>
 </project>
