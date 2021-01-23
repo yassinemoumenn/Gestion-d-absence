@@ -44,7 +44,6 @@ public class SetNewUser implements Initializable {
         dropDown_classes.getItems().addAll(classes);
     }
 
-    // TODO optimaze the code
     public void setUser(MouseEvent mouseEvent) throws SQLException {
         ClassesDAO id = new ClassesDAOImpl();
         ResultSet index = id.getIndexof(dropDown_classes.getValue());

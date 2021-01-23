@@ -26,12 +26,12 @@
                   </Button>
                     </children>
                 </HBox>
-                <TableView fx:id="userTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="635.0" prefWidth="1040.0">
+                <TableView fx:id="userTable" fixedCellSize="0.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="635.0" VBox.vgrow="ALWAYS">
                     <columns>
 
                         <TableColumn fx:id="student_name" prefWidth="328.0" text="Nom et premon" />
                         <TableColumn fx:id="student_email" prefWidth="458.0" text="Email" />
-                        <TableColumn fx:id="student_class" prefWidth="88.0" text="classe" />
+                        <TableColumn fx:id="student_class" prefWidth="253.0" text="classe" />
 
                     </columns>
                 </TableView>
@@ -45,7 +45,7 @@
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
-                  <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false"  onMouseClicked="#DeleteUser"  prefHeight="41.0" prefWidth="125.0" text="Delete">
+                  <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Delete">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -70,7 +70,7 @@
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewSec" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
-                  <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false"  onMouseClicked="#DeleteUser"  prefHeight="41.0" prefWidth="125.0" text="Delete">
+                  <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Delete">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>

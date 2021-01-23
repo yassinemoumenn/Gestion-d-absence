@@ -7,15 +7,10 @@
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/AdminPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/DAO/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/DAO/UserDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceApprenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceApprenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceFormateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceFormateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceSecretaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Service/ServiceSecretaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/SetNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/SetNewUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/AdminPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/AdminPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/AdminPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/DAO/UserDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/DAO/UserDaoImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/Service/ServiceApprenant.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/Service/ServiceApprenant.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,19 +85,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
@@ -128,7 +110,7 @@
       <workItem from="1610964344830" duration="10815000" />
       <workItem from="1611055815120" duration="7640000" />
       <workItem from="1611130693179" duration="11594000" />
-      <workItem from="1611325146921" duration="9421000" />
+      <workItem from="1611325146921" duration="12096000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1611318414954</created>
