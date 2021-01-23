@@ -1,8 +1,8 @@
 package org.example.Model;
 
-public class Formateur  extends Users{
+public class Formateur  {
 
-    private int id_formateur;
+    private int id;
     private int user_id;
     private int class_id;
 
@@ -10,18 +10,18 @@ public class Formateur  extends Users{
 
     }
 
-    public Formateur(int id_formateur, int user_id, int class_id) {
-        this.id_formateur = id_formateur;
+    public Formateur(int id, int user_id, int class_id) {
+        this.id = id;
         this.user_id = user_id;
         this.class_id = class_id;
     }
 
-    public int getId_formateur() {
-        return id_formateur;
+    public int getId() {
+        return id;
     }
 
-    public void setId_formateur(int id_formateur) {
-        this.id_formateur = id_formateur;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUser_id() {
