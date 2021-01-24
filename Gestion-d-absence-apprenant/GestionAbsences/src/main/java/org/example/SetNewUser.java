@@ -54,7 +54,7 @@ public class SetNewUser implements Initializable {
             ResultSet user_id = usr.getIndex(nUser);
             if (user_id.next()) {
                 AdminDao setApro = new AdminDaoImp();
-                System.out.println(setApro.setApprenent(new Apprenant(user_id.getInt("id"), index.getInt("id"))));
+                setApro.setApprenent(new Apprenant(user_id.getInt("id"), index.getInt("id")));
             }
         }
     }

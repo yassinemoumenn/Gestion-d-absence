@@ -1,5 +1,7 @@
 package org.example.DAO;
 
+import org.example.Model.Formateur;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -14,7 +16,7 @@ public interface FormateurDao {
 
     String setFormateur(String email,String password) throws SQLException;
 
-    String updateFormateur(String email,String password) throws SQLException;
+    void updateFormateur(Formateur formateur) throws SQLException;
 
 //    public ObservableList<AffichageStudent>AfficheStudentName();
 }

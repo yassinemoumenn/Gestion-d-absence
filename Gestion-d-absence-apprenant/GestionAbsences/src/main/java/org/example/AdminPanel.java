@@ -1,16 +1,21 @@
 package org.example;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.example.DAO.UserDao;
-import org.example.DAO.UserDaoImp;
+import org.example.DAO.*;
+import org.example.Model.Apprenant;
+import org.example.Model.Formateur;
 import org.example.Model.StudentV2;
 import org.example.Model.Users;
 import org.example.Service.ServiceApprenant;
@@ -19,6 +24,7 @@ import org.example.Service.ServiceSecretaire;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -41,6 +47,15 @@ public class AdminPanel implements Initializable {
 
     public TableColumn sec_name;
     public TableColumn sec_email;
+
+    public VBox updateForm;
+    public Button updateBTN;
+
+    public Button updateStudent;
+    public ChoiceBox classes;
+    public Button updateBT;
+    public VBox updateFor;
+    public ChoiceBox classi;
 
 
     private int window = 1;
@@ -83,6 +98,12 @@ public class AdminPanel implements Initializable {
             extracted();
         } catch (SQLException | ClassNotFoundException throwables) {
             System.out.println(throwables.getMessage());
+        }
+        try {
+            setDropDown(classes);
+            setDropDown(classi);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 
@@ -136,4 +157,57 @@ public class AdminPanel implements Initializable {
         extracted();
     }
 
+    public void UpdateUser(MouseEvent mouseEvent) throws SQLException {
+        updateForm.setVisible(true);
+        updateBTN.setVisible(false);
+    }
+
+    //TODO remove duplicate of this method from SetNewUser file
+    private void setDropDown(ChoiceBox classs) throws SQLException {
+        ObservableList<String> clas = FXCollections.observableArrayList();
+        ClassesDAO data = new ClassesDAOImpl();
+        ResultSet the_classes = data.getClasses();
+        while (the_classes.next()) {
+            clas.add(the_classes.getString("classe"));
+        }
+
+        classs.getItems().addAll(clas);
+    }
+
+    public void UpdateStudent(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        if (window == 1) {
+            updateApprenant(new ClassesDAOImpl());
+        } else if (window == 2) {
+            updateFormateur(new ClassesDAOImpl());
+        }
+        extracted();
+    }
+
+    public void UpdateForma(MouseEvent mouseEvent) {
+        updateBT.setVisible(false);
+        updateFor.setVisible(true);
+    }
+
+
+    private void updateFormateur(ClassesDAO id) throws SQLException {
+        ResultSet index = id.getIndexof((String) classi.getValue());
+        FormateurDao formateur = new FormateurDaoImp();
+        if (index.next()) {
+            Formateur formateur1 = new Formateur(formateurTable.getSelectionModel().getSelectedItem().getId(), index.getInt("id"));
+            formateur.updateFormateur(formateur1);
+        }
+        updateBT.setVisible(true);
+        updateFor.setVisible(false);
+    }
+
+    private void updateApprenant(ClassesDAO id) throws SQLException {
+        ResultSet index = id.getIndexof((String) classes.getValue());
+        ApprenantDao apprenant = new ApprenantDaoImp();
+        if (index.next()) {
+            Apprenant student = new Apprenant(userTable.getSelectionModel().getSelectedItem().getId(), index.getInt("id"));
+            apprenant.updateClass(student);
+        }
+        updateForm.setVisible(false);
+        updateBTN.setVisible(true);
+    }
 }
