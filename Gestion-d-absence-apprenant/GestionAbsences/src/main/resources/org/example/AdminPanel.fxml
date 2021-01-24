@@ -14,9 +14,9 @@
                 <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="210.0" text="Log out" />
             </children>
         </VBox>
-        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="240.0" prefWidth="1041.0">
+                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="1041.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
                         <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Delete">
@@ -49,9 +49,9 @@
                 <Insets left="15.0" right="15.0" />
             </padding>
         </VBox>
-        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="144.0" prefWidth="1040.0">
+                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="97.0" prefWidth="1040.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
                         <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Delete">
