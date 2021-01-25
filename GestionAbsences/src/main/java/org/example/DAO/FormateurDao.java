@@ -12,13 +12,7 @@ public interface FormateurDao {
 
     ResultSet getAll() throws SQLException;
 
-   // String setApprenent(Apprenant apprenant) throws SQLException;
-
-    String setAbsence(Absences absences) throws SQLException;
-
-    String setFormateur(String email,String password) throws SQLException;
-
-    String updateFormateur(String email,String password) throws SQLException;
+    Object setAbsence(Absences absences) throws SQLException ;
 
     public ObservableList<AffichageStudent>AfficheStudentName();
 }
