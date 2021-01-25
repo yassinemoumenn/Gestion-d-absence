@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="fix bug">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2128b8b3-c774-4f0b-a990-af82d54b62f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2128b8b3-c774-4f0b-a990-af82d54b62f6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/AdminPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/DAO/FormateurDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/DAO/FormateurDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/SetNewSecretaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/SetNewSecretaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/SetNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/SetNewUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/MysqlConnect/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/MysqlConnect/Connexion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,11 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="2128b8b3-c774-4f0b-a990-af82d54b62f6" value="Blue" />
+    </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,7 +121,7 @@
       <workItem from="1611424419347" duration="67000" />
       <workItem from="1611487084849" duration="8490000" />
       <workItem from="1611577414142" duration="1059000" />
-      <workItem from="1611578722271" duration="5118000" />
+      <workItem from="1611578722271" duration="5752000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1611318414954</created>
