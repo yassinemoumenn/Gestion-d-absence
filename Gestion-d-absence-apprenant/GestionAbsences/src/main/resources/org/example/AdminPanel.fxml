@@ -19,17 +19,17 @@
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="105.0" prefWidth="1041.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
-                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Delete">
+                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
                             <HBox.margin>
                                 <Insets left="20.0" right="27.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="updateBTN" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateUser" prefHeight="41.0" prefWidth="125.0" text="Update" visible="true" />
+                        <Button fx:id="updateBTN" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateUser" prefHeight="41.0" prefWidth="125.0" text="Modifié" visible="true" />
 
                         <VBox fx:id="updateForm" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0" prefWidth="225.0" spacing="20.0" visible="false">
                             <children>
                                 <ChoiceBox fx:id="classes" prefWidth="150.0" />
-                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" text="Update" />
+                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" text="Modifié" />
                             </children>
                         </VBox>
                     </children>
@@ -54,12 +54,12 @@
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="97.0" prefWidth="1040.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
-                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Delete">
+                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="updateBT" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateForma" prefHeight="41.0" prefWidth="125.0" text="Update" visible="true">
+                        <Button fx:id="updateBT" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateForma" prefHeight="41.0" prefWidth="125.0" text="Modifié" visible="true">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin></Button>
@@ -67,7 +67,7 @@
                         <VBox fx:id="updateFor" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0" prefWidth="225.0" spacing="20.0" visible="false">
                             <children>
                                 <ChoiceBox fx:id="classi" prefWidth="150.0" />
-                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" text="Update" />
+                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" text="Modifié" />
                             </children>
                         </VBox>
                     </children>
@@ -90,7 +90,7 @@
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewSec" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
-                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Delete">
+                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>

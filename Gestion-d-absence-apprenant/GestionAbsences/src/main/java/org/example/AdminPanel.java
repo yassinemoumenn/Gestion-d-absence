@@ -29,6 +29,13 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdminPanel implements Initializable {
+
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public static Stage stage;
     public VBox studentPanel;
     public VBox formateuPanel;
     public VBox secrePanel;
@@ -107,7 +114,8 @@ public class AdminPanel implements Initializable {
         }
     }
 
-    private void extracted() throws SQLException, ClassNotFoundException {
+
+    public void extracted() throws SQLException, ClassNotFoundException {
         if (window == 1) {
             ServiceApprenant usess = new ServiceApprenant();
             usess.display("Apprenant", student_name, student_email, student_class, userTable);
@@ -137,7 +145,7 @@ public class AdminPanel implements Initializable {
     }
 
     private void popUp(String pop) throws IOException {
-        Stage stage = new Stage();
+        stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(pop + ".fxml"));
         stage.setTitle("Ajouté nevaeu utilisateur");
         stage.setScene(new Scene(root));

@@ -1,5 +1,6 @@
 package org.example;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -44,35 +45,41 @@ public class SetNewUser implements Initializable {
         dropDown_classes.getItems().addAll(classes);
     }
 
-    public void setUser(MouseEvent mouseEvent) throws SQLException {
-        ClassesDAO id = new ClassesDAOImpl();
-        ResultSet index = id.getIndexof(dropDown_classes.getValue());
-        if (index.next()) {
-            UserDao usr = new UserDaoImp();
-            Users nUser = new Users(userName.getText(), email.getText(), password.getText(), "Apprenant");
-            usr.create(nUser);
-            ResultSet user_id = usr.getIndex(nUser);
-            if (user_id.next()) {
-                AdminDao setApro = new AdminDaoImp();
-                setApro.setApprenent(new Apprenant(user_id.getInt("id"), index.getInt("id")));
+    public void setUser(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        if (!userName.getText().equals("") && !password.getText().equals("") && !email.getText().equals("")) {
+            ClassesDAO id = new ClassesDAOImpl();
+            ResultSet index = id.getIndexof(dropDown_classes.getValue());
+            if (index.next()) {
+                UserDao usr = new UserDaoImp();
+                Users nUser = new Users(userName.getText(), email.getText(), password.getText(), "Apprenant");
+                usr.create(nUser);
+                ResultSet user_id = usr.getIndex(nUser);
+                if (user_id.next()) {
+                    AdminDao setApro = new AdminDaoImp();
+                    setApro.setApprenent(new Apprenant(user_id.getInt("id"), index.getInt("id")));
+                }
             }
+            AdminPanel.stage.close();
         }
+
     }
 
     public void setUserFormateur(MouseEvent mouseEvent) throws SQLException {
-        ClassesDAO id = new ClassesDAOImpl();
-        ResultSet index = id.getIndexof(dropDown_classes.getValue());
-        if (index.next()) {
-            UserDao usr = new UserDaoImp();
-            Users nUser = new Users(userName.getText(), email.getText(), password.getText(), "Formateur");
-            usr.create(nUser);
-            ResultSet user_id = usr.getIndex(nUser);
-            if (user_id.next()) {
-                AdminDao setApro = new AdminDaoImp();
-                System.out.println(setApro.setFormateur(new Formateur(user_id.getInt("id"), index.getInt("id"))));
+        if (!userName.getText().equals("") && !password.getText().equals("") && !email.getText().equals("")) {
+            ClassesDAO id = new ClassesDAOImpl();
+            ResultSet index = id.getIndexof(dropDown_classes.getValue());
+            if (index.next()) {
+                UserDao usr = new UserDaoImp();
+                Users nUser = new Users(userName.getText(), email.getText(), password.getText(), "Formateur");
+                usr.create(nUser);
+                ResultSet user_id = usr.getIndex(nUser);
+                if (user_id.next()) {
+                    AdminDao setApro = new AdminDaoImp();
+                    System.out.println(setApro.setFormateur(new Formateur(user_id.getInt("id"), index.getInt("id"))));
+                }
             }
+            AdminPanel.stage.close();
         }
-
     }
 }
 

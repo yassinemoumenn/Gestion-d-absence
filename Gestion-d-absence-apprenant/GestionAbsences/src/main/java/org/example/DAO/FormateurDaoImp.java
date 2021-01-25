@@ -12,7 +12,6 @@ import static org.example.MysqlConnect.Connexion.connect;
 
 public class FormateurDaoImp implements FormateurDao {
 
-
     @Override
     public ResultSet get_By_id(int id) throws SQLException {
         try {
