@@ -155,12 +155,16 @@ public class AdminPanel implements Initializable {
 
     public void DeleteUser(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         UserDao deleteUser = new UserDaoImp();
-        if (window == 1) {
-            deleteUser.deleteById(userTable.getSelectionModel().getSelectedItem().getId());
-        } else if (window == 2) {
-            deleteUser.deleteById(formateurTable.getSelectionModel().getSelectedItem().getId());
-        } else {
-            deleteUser.deleteById(secreTable.getSelectionModel().getSelectedItem().getId());
+        switch (window) {
+            case 1:
+                if (!userTable.getSelectionModel().isEmpty())
+                    deleteUser.deleteById(userTable.getSelectionModel().getSelectedItem().getId());
+            case 2:
+                if (!formateurTable.getSelectionModel().isEmpty())
+                    deleteUser.deleteById(formateurTable.getSelectionModel().getSelectedItem().getId());
+            case 3:
+                if (!secreTable.getSelectionModel().isEmpty())
+                    deleteUser.deleteById(secreTable.getSelectionModel().getSelectedItem().getId());
         }
         extracted();
     }
