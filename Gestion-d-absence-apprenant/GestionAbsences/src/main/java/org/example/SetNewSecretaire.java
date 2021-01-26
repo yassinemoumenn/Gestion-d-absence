@@ -1,5 +1,6 @@
 package org.example;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -15,13 +16,21 @@ public class SetNewSecretaire {
     public TextField email;
     public TextField Name;
     public PasswordField password;
+    public Label msgField;
 
     public void setUserFormateur(MouseEvent mouseEvent) throws SQLException {
+
         if (!email.getText().equals("") && !Name.getText().equals("") && !password.getText().equals("")) {
-            UserDao usr = new UserDaoImp();
-            Users nUser = new Users(Name.getText(), email.getText(), password.getText(), "Secretaire");
-            usr.create(nUser);
-            AdminPanel.stage.close();
+            if (email.getText().matches("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$")) {
+                UserDao usr = new UserDaoImp();
+                Users nUser = new Users(Name.getText(), email.getText(), password.getText(), "Secretaire");
+                usr.create(nUser);
+                AdminPanel.stage.close();
+            }else{
+                msgField.setVisible(true);
+                msgField.setText("Please verify your infos ");
+            }
+
         }
 
     }

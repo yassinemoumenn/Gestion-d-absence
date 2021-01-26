@@ -112,7 +112,6 @@ public class UserDaoImp  implements UserDao{
 
     @Override
     public ResultSet getUserById(int id) throws SQLException {
-
             try {
                 String sql = "SELECT * FROM `Users` WHERE id= ? ";
                 PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
