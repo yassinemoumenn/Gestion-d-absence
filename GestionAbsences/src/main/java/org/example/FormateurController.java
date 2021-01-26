@@ -1,13 +1,16 @@
 package org.example;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.DAO.FormateurDaoImp;
 import org.example.Model.AffichageStudent;
+import org.example.Model.Apprenant;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -19,7 +22,11 @@ public class FormateurController implements Initializable {
     private TableView<AffichageStudent> TableView;
     @FXML
     private TableColumn<AffichageStudent, String> colfullname;
+    @FXML
+    private ComboBox type;
 
+    @FXML
+    private ComboBox selectApprenant;
 
     public FormateurController() {
     }
@@ -28,7 +35,7 @@ public class FormateurController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
+        typeAbsence();
         try {
             showApprenants();
         } catch (SQLException throwables) {
@@ -42,7 +49,7 @@ public class FormateurController implements Initializable {
     public ObservableList<AffichageStudent> getAllApprenants() throws SQLException, ClassNotFoundException{
         FormateurDaoImp formateur=new  FormateurDaoImp();
         ObservableList<AffichageStudent> apprenantList = formateur.AfficheStudentName();
-
+        //selectApprenant.getItems().apprenantList;
         return apprenantList;
     }
 
@@ -52,7 +59,21 @@ public class FormateurController implements Initializable {
         colfullname.setCellValueFactory(new PropertyValueFactory<AffichageStudent, String>("full_name"));
 
 
+
+
         TableView.setItems(list);
+    }
+
+
+    public void typeAbsence(){
+
+        ObservableList typeAbsence = FXCollections.observableArrayList(
+                "Absent","Present","Demi_journée"
+        );
+
+        type.setItems(typeAbsence);
+
+
     }
 
 }

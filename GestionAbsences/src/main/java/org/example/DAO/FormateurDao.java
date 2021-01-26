@@ -12,7 +12,8 @@ public interface FormateurDao {
 
     ResultSet getAll() throws SQLException;
 
-    Object setAbsence(Absences absences) throws SQLException ;
+
+    String setAbsence(Absences absences) throws SQLException;
 
     public ObservableList<AffichageStudent>AfficheStudentName();
 }
