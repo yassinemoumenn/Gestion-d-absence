@@ -1,17 +1,19 @@
 package org.example.DAO;
 
-import org.example.Model.Users;
+import org.example.Model.Secretaire;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public interface SecretaireDao {
-    ResultSet get_By_id(int id) throws SQLException;
 
+    public List<Secretaire> getAll() throws ClassNotFoundException, SQLException;
 
-    ResultSet getAll() throws SQLException;
+    public Secretaire getById(int id) throws ClassNotFoundException, SQLException;
 
-    String set(Users users) throws SQLException;
+    public Secretaire sauveSecretaire(String email, String password) throws ClassNotFoundException, SQLException;
 
-    String set() throws SQLException;
+    public int updateSecretaire(int id, String email, String password) throws ClassNotFoundException, SQLException;
+
+    public int deleteById(int id);
 }

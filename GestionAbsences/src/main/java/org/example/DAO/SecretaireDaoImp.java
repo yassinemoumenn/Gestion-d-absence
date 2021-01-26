@@ -1,83 +1,63 @@
 package org.example.DAO;
 
-//import DAO.AdminDao;
-import org.example.DAO.UserDao;
-import org.example.Model.Apprenant;
-
-import org.example.MysqlConnect.Connexion;
-
 import org.example.Model.Secretaire;
 import org.example.MysqlConnect.Connexion;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class SecretaireDaoImp extends Connexion implements SecretaireDao {
+public class SecretaireDaoImp implements SecretaireDao {
 
+    Statement statement=null;
+    @Override
+    public List<Secretaire> getAll() throws ClassNotFoundException, SQLException {
+
+        List<Secretaire> secretaires= new ArrayList<Secretaire>();
+
+
+        statement = Connexion.getMyConnexion().createStatement();
+        System.out.println("creation de l'objet Statement");
+
+        //4- selectionner la table secretaire
+        ResultSet resultat;
+        String requete = "Select * From user";
+
+        resultat = statement.executeQuery(requete);
+
+        while (resultat.next()) {
+            int id = resultat.getInt("id_user");
+            String email=resultat.getString("mail");
+            String password=resultat.getString("password");
+
+
+            // Creer l'objet Personne
+            Secretaire s = new Secretaire(id,email,password);
+            secretaires.add(s);
+        }
+
+        return secretaires;
+    }
 
     @Override
-    public ResultSet get_By_id(int id) throws SQLException {
-        try {
-            String sql = "SELECT * FROM Users WHERE  id = ?;";
-            PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
-            stmt.setInt(1,id);
-            return stmt.executeQuery();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }finally {
-            if(connect() != null){
-                Objects.requireNonNull(connect()).close();
-            }
-        }
+    public Secretaire getById(int id) throws ClassNotFoundException, SQLException {
         return null;
     }
+
     @Override
-    public ResultSet getAll() throws SQLException {
-        try {
-            Statement stmt = Objects.requireNonNull(connect()).createStatement();
-            return stmt.executeQuery("SELECT * FROM Users;");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }finally {
-            if(connect() != null){
-                Objects.requireNonNull(connect()).close();
-            }
-        }
+    public Secretaire sauveSecretaire(String email, String password) throws ClassNotFoundException, SQLException {
         return null;
     }
 
-
-
     @Override
-    public String set() throws SQLException {
-        try {
-            String sql = "INSERT INTO students (`Student_id`,`absence_id`,`absence_type`) VALUES (?,?);";
-            PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
-            stmt.setInt(1, Apprenant.getId());
-            stmt.setString(2, Apprenant.getUser_id());
-            stmt.setString(3, Apprenant.getClass_id());
-
-            stmt.executeUpdate();
-            return "Done!";
-        } catch (Exception e) {
-            return e.getMessage();
-        }finally {
-            if(connect() != null){
-                Objects.requireNonNull(connect()).close();
-            }
-        }
+    public int updateSecretaire(int id,String email, String password) throws ClassNotFoundException, SQLException {
+        return 0;
     }
 
-
-
-
-
+    @Override
+    public int deleteById(int id) {
+        return 0;
+    }
 }
-
-
-
-
-
