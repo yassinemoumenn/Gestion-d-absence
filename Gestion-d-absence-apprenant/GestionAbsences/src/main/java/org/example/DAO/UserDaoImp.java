@@ -11,8 +11,6 @@ import java.util.Objects;
 import static org.example.MysqlConnect.Connexion.connect;
 
 public class UserDaoImp  implements UserDao{
-
-
     // Role: create new user
     //info require: full name, email, password,type(student, formateur or secritier)
     @Override
@@ -28,10 +26,6 @@ public class UserDaoImp  implements UserDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
 
@@ -46,10 +40,6 @@ public class UserDaoImp  implements UserDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
 
@@ -68,10 +58,6 @@ public class UserDaoImp  implements UserDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
 
@@ -85,10 +71,6 @@ public class UserDaoImp  implements UserDao{
             return stmt.executeQuery();
         } catch (Exception e) {
             e.getMessage();
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
         return null;
     }
@@ -102,10 +84,6 @@ public class UserDaoImp  implements UserDao{
             return stmt.executeQuery();
         } catch (Exception e) {
             e.getMessage();
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
         return null;
     }
@@ -119,10 +97,6 @@ public class UserDaoImp  implements UserDao{
                 return stmt.executeQuery();
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
-            }finally {
-                if(Connexion.connect() != null){
-                    Connexion.connect().close();
-                }
             }
             return null;
         }

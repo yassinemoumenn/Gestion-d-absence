@@ -24,10 +24,6 @@ public class ApprenantDaoImp implements ApprenantDao {
             return stmt.executeQuery();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (Connexion.connect() != null) {
-                Connexion.connect().close();
-            }
         }
         return null;
     }
@@ -43,10 +39,6 @@ public class ApprenantDaoImp implements ApprenantDao {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
 

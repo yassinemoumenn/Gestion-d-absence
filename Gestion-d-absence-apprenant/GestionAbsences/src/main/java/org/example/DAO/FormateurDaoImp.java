@@ -22,10 +22,6 @@ public class FormateurDaoImp implements FormateurDao {
             return stmt.executeQuery();
         } catch (SQLException e) {
             System.out.printf("Not Done");
-        } finally {
-            if (Connexion.connect() != null) {
-                Connexion.connect().close();
-            }
         }
         return null;
     }
@@ -51,10 +47,6 @@ public class FormateurDaoImp implements FormateurDao {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
 }

@@ -17,10 +17,6 @@ public class ClassesDAOImpl implements ClassesDAO {
             return stmt.executeQuery();
         } catch (Exception e) {
             e.getMessage();
-        } finally {
-            if (Connexion.connect() != null) {
-                Objects.requireNonNull(Connexion.connect()).close();
-            }
         }
         return null;
     }
@@ -34,10 +30,6 @@ public class ClassesDAOImpl implements ClassesDAO {
             return stmt.executeQuery();
         } catch (Exception e) {
             e.getMessage();
-        } finally {
-            if (Connexion.connect() != null) {
-                Objects.requireNonNull(Connexion.connect()).close();
-            }
         }
         return null;
     }

@@ -17,10 +17,4 @@ public abstract class Connexion {
             return null;
         }
     }
-
-    public static void checkConnectIsNotNull() throws SQLException {
-        if (Connexion.connect() == null) {
-            Objects.requireNonNull(Connexion.connect()).close();
-        }
-    }
 }

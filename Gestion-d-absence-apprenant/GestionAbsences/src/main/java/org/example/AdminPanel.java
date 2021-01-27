@@ -37,10 +37,6 @@ public class AdminPanel implements Initializable {
     public TableColumn class_name;
     public TableColumn class_formateur;
 
-    public Stage getStage() {
-        return stage;
-    }
-
     public static Stage stage;
     public VBox studentPanel;
     public VBox formateuPanel;
@@ -88,9 +84,7 @@ public class AdminPanel implements Initializable {
         formateuPanel.setVisible(true);
         secrePanel.setVisible(false);
         classView.setVisible(false);
-
         window = 2;
-
         extracted();
     }
 
@@ -99,7 +93,6 @@ public class AdminPanel implements Initializable {
         formateuPanel.setVisible(false);
         secrePanel.setVisible(true);
         classView.setVisible(false);
-
         window = 3;
         extracted();
     }
@@ -112,11 +105,6 @@ public class AdminPanel implements Initializable {
         window = 4;
         extracted();
     }
-
-//    @Override
-//    protected Object clone() throws CloneNotSupportedException {
-//        return super.clone();
-//    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -170,9 +158,15 @@ public class AdminPanel implements Initializable {
 
     }
 
+    //pop for add new secreteir
     public void setNewSec(MouseEvent mouseEvent) throws IOException {
         popUp("setNewSecretaire");
 
+    }
+
+    //pop for add new class
+    public void setNewClass(MouseEvent mouseEvent) throws IOException {
+        popUp("SetNewClasse");
     }
 
     private void popUp(String pop) throws IOException {
@@ -255,9 +249,7 @@ public class AdminPanel implements Initializable {
         updateBTN.setVisible(true);
     }
 
-    public void setNewClass(MouseEvent mouseEvent) throws IOException {
-        popUp("SetNewClasse");
-    }
+
     //we can't use this function now , please read the comment in this file .....
     //src/main/java/org/example/DAO/ClassesDAOImpl.java
 
