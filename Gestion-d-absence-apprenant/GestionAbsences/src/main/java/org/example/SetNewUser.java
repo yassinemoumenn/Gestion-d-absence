@@ -38,7 +38,6 @@ public class SetNewUser implements Initializable {
 
 
     private void setDropDown() throws SQLException {
-
         ClassesDAO data = new ClassesDAOImpl();
         ResultSet the_classes = data.getClasses();
         while (the_classes.next()) {
@@ -69,7 +68,6 @@ public class SetNewUser implements Initializable {
                 msgField.setText("Please verify your infos ");
             }
         }
-
     }
 
     public void setUserFormateur(MouseEvent mouseEvent) throws SQLException {
@@ -94,6 +92,7 @@ public class SetNewUser implements Initializable {
             }
         }
     }
+
 }
 
 

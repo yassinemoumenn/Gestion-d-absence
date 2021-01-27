@@ -3,6 +3,7 @@ package org.example.MysqlConnect;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public abstract class Connexion {
     private static String user = "root";
@@ -14,6 +15,12 @@ public abstract class Connexion {
         } catch (SQLException throwables) {
             System.out.println(throwables.getMessage());
             return null;
+        }
+    }
+
+    public static void checkConnectIsNotNull() throws SQLException {
+        if (Connexion.connect() == null) {
+            Objects.requireNonNull(Connexion.connect()).close();
         }
     }
 }

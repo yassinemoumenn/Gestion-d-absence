@@ -11,7 +11,7 @@
                 <Button mnemonicParsing="false" onMouseClicked="#displayStude" prefHeight="46.0" prefWidth="210.0" text="Apprenents" />
                 <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#displayform" prefHeight="46.0" prefWidth="210.0" text="Formateurs" />
                 <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#displaySere" prefHeight="46.0" prefWidth="210.0" text="Secretaires" />
-                <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="210.0" text="Log out" />
+                <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#displayClasses" prefHeight="46.0" prefWidth="210.0" text="Classes" />
             </children>
         </VBox>
         <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -34,7 +34,7 @@
                         </VBox>
                     </children>
                 </HBox>
-                <TableView fx:id="userTable" fixedCellSize="0.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="635.0" VBox.vgrow="ALWAYS">
+                <TableView fx:id="userTable" fixedCellSize="0.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="1041.0" VBox.vgrow="ALWAYS">
                     <columns>
 
                         <TableColumn fx:id="student_name" prefWidth="328.0" text="Nom et premon" />
@@ -102,6 +102,30 @@
 
                         <TableColumn fx:id="sec_name" prefWidth="526.0" text="Nom et premon" />
                         <TableColumn fx:id="sec_email" prefWidth="438.0" text="Email" />
+                    </columns>
+                </TableView>
+            </children>
+            <padding>
+                <Insets left="15.0" right="15.0" />
+            </padding>
+        </VBox>
+        <VBox fx:id="classView" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
+                    <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewClass" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
+<!--                        <Button layoutX="10.0" layouY="33.0" mnemonicParsing="false"  prefHeight="41.0" prefWidth="125.0" text="Effacer">-->
+<!--                            <HBox.margin>-->
+<!--                                <Insets left="20.0" />-->
+<!--                            </HBox.margin>-->
+<!--                        </Button>-->
+                    </children>
+                </HBox>
+                <TableView fx:id="classTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0" prefWidth="1040.0">
+                    <columns>
+
+                        <TableColumn fx:id="class_name" prefWidth="526.0" text="Classe N°:" />
+                        <TableColumn fx:id="class_formateur" prefWidth="438.0" text="Classe" />
                     </columns>
                 </TableView>
             </children>

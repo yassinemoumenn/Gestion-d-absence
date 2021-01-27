@@ -41,7 +41,7 @@
                </padding>
             </PasswordField>
             <ChoiceBox fx:id="dropDown_classes" prefHeight="51.0" prefWidth="379.0" />
-            <Button mnemonicParsing="false" onMouseClicked="#setUser" prefHeight="47.0" prefWidth="375.0" text="Ajouté" />
+            <Button mnemonicParsing="false" onMouseClicked="#setUser"  prefHeight="47.0" prefWidth="375.0" text="Ajouté" />
          </children></VBox>
    </children>
 </AnchorPane>
