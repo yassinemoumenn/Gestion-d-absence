@@ -1,5 +1,7 @@
 package org.example.DAO;
 
+import javafx.collections.ObservableList;
+import org.example.Model.ApprenantAbsente;
 import org.example.Model.Secretaire;
 
 import java.sql.SQLException;
@@ -11,9 +13,13 @@ public interface SecretaireDao {
 
     public Secretaire getById(int id) throws ClassNotFoundException, SQLException;
 
-    public Secretaire sauveSecretaire(String email, String password) throws ClassNotFoundException, SQLException;
+    public Secretaire sauveSecretaire(String full_name,String email, String password) throws ClassNotFoundException, SQLException;
 
-    public int updateSecretaire(int id, String email, String password) throws ClassNotFoundException, SQLException;
+    public void updateSecretaire(int id,String full_name, String email, String password)throws ClassNotFoundException, SQLException;
 
-    public int deleteById(int id);
+    public void deleteById(int id_user) throws ClassNotFoundException, SQLException;
+
+    public void UpdateJustification(String justification,int id);
+
+    public ObservableList<ApprenantAbsente> AfficheAllpprantAbsence();
 }

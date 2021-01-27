@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GestionAbsences/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GestionAbsences/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GestionAbsences/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/GestionAbsences.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/GestionAbsences.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/SecretaireDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/SecretaireDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/SecretaireDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/SecretaireDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/MysqlConnect/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/MysqlConnect/Connexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/resources/secretaire.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/resources/secretaire.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +35,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/MysqlConnect/DBFile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
