@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="fix bug">
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/secretairecontroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/secretaire.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/secretaire.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/GestionAbsences.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/App.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +64,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GestionAbsences" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.18635927" />
@@ -67,6 +74,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example" />
       <recent name="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/MysqlConnect/DBFile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

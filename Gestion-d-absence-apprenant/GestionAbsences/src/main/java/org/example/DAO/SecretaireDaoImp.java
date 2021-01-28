@@ -85,14 +85,6 @@ public class SecretaireDaoImp  extends Connexion implements SecretaireDao{
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }finally {
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            }catch (SQLException e){
-                e.printStackTrace();
-            }
         }
         return ApprenantsAbsentes;
     }

@@ -20,8 +20,8 @@ public class App extends Application {
 
 //        scene = new Scene(loadFXML("secretaire"));
 //      Parent root = FXMLLoader.load(getClass().getResource("contrapprenant.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("AdminPanel.fxml"));
-//        Parent root = FXMLLoader.load(getClass().getResource("secretaire.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("AdminPanel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("secretaire.fxml"));
         stage.setTitle("Gestion d'asbcenses");
         stage.setScene(new Scene(root));
         stage.show();
