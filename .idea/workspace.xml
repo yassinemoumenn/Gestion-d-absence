@@ -23,8 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/resources/org/example/Formateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/resources/org/example/Formateur.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/Formateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/Formateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/FormateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/FormateurController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

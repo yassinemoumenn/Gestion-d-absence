@@ -10,7 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.DAO.FormateurDaoImp;
 import org.example.Model.AffichageStudent;
-import org.example.Model.Apprenant;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -68,7 +67,7 @@ public class FormateurController implements Initializable {
     public void typeAbsence(){
 
         ObservableList typeAbsence = FXCollections.observableArrayList(
-                "Absent","Present","Demi_journée"
+                "Present","Demi_journée"
         );
 
         type.setItems(typeAbsence);
