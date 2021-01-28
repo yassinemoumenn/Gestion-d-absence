@@ -119,22 +119,12 @@ public class AdminPanel implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-//        Timer timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            public void run() {
-//                System.out.println("its work!");
-//                userTable.refresh();
-//                formateurTable.refresh();
-//                secreTable.refresh();
-//            }
-//        }, 1000, 1000);
     }
 
     public void extracted() throws SQLException, ClassNotFoundException {
         if (window == 1) {
             ServiceApprenant usess = new ServiceApprenant();
-            usess.display("Apprenant", student_name, student_email, student_class, userTable);
+            usess.display("Apprenant", this.student_name, this.student_email, this.student_class, this.userTable);
         } else if (window == 2) {
             ServiceFormateur usess = new ServiceFormateur();
             usess.display("Formateur", formateur_name, formateur_email, formateur_class, formateurTable, 1);
@@ -190,7 +180,6 @@ public class AdminPanel implements Initializable {
             case 3:
                 if (!secreTable.getSelectionModel().isEmpty())
                     deleteUser.deleteById(secreTable.getSelectionModel().getSelectedItem().getId());
-                //TODO add delete class case
         }
         extracted();
     }
@@ -208,7 +197,6 @@ public class AdminPanel implements Initializable {
         while (the_classes.next()) {
             clas.add(the_classes.getString("classe"));
         }
-
         classs.getItems().addAll(clas);
     }
 
@@ -250,17 +238,18 @@ public class AdminPanel implements Initializable {
     }
 
 
-    //we can't use this function now , please read the comment in this file .....
-    //src/main/java/org/example/DAO/ClassesDAOImpl.java
+    //this purpese of this function is to delete classes
+    public void DeleteClass(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        if (!classTable.getSelectionModel().isEmpty()) {
+            ClassesDAO delete = new ClassesDAOImpl();
+            delete.deleteById(classTable.getSelectionModel().getSelectedItem().getId());
+            extracted();
+        }
 
-//    public void DeleteClass(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
-//        if (!classTable.getSelectionModel().isEmpty()){
-//            ClassesDAO delete= new ClassesDAOImpl();
-//            delete.deleteById(classTable.getSelectionModel().getSelectedItem().getId());
-//            extracted();
-//        }
-//
-//    }
+    }
 
 
+    public void refresh(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+      extracted();
+    }
 }

@@ -13,13 +13,14 @@ import org.example.DAO.*;
 import org.example.Model.Apprenant;
 import org.example.Model.Formateur;
 import org.example.Model.Users;
+import org.example.Service.ServiceApprenant;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class SetNewUser implements Initializable {
+public class SetNewUser extends AdminPanel implements Initializable {
     public TextField userName;
     public PasswordField password;
     public ChoiceBox<String> dropDown_classes;
@@ -63,6 +64,8 @@ public class SetNewUser implements Initializable {
                     }
                 }
                 AdminPanel.stage.close();
+
+//             this.refres();
             }else{
                 msgField.setVisible(true);
                 msgField.setText("Please verify your infos ");

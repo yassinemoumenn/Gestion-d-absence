@@ -65,20 +65,16 @@ public class ClassesDAOImpl implements ClassesDAO {
     //because the id od the table is a PK and we use it loke a FK
     // we can't delete or update any row inside this table
 
-//    @Override
-//    public void deleteById(int id) throws SQLException {
-//        try {
-//            var sql = "DELETE FROM classes WHERE id =?;";
-//            PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
-//            stmt.setInt(1, id);
-//            stmt.executeUpdate();
-//
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        } finally {
-//            if (connect() != null) {
-//                Objects.requireNonNull(connect()).close();
-//            }
-//        }
-//    }
+    @Override
+    public void deleteById(int id) throws SQLException {
+        try {
+            var sql = "DELETE FROM classes WHERE id =?;";
+            PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+            System.out.println("done!");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
