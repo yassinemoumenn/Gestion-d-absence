@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/AdminDaoImp.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/ApprenantDaoImp.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/ClassesDAOImpl.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/FormateurDaoImp.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/SecretaireDaoImp.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/UserDaoImp.java" dialect="GenericSQL" />
   </component>
 </project>
