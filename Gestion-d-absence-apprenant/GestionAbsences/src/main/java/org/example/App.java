@@ -18,8 +18,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-//        Parent root = FXMLLoader.load(getClass().getResource("contrapprenant.fxml"));
+//        scene = new Scene(loadFXML("secretaire"));
+//      Parent root = FXMLLoader.load(getClass().getResource("contrapprenant.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("AdminPanel.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("secretaire.fxml"));
         stage.setTitle("Gestion d'asbcenses");
         stage.setScene(new Scene(root));
         stage.show();
