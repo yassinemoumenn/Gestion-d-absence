@@ -21,6 +21,7 @@ public class SetNewSecretaire {
             UserDao usr = new UserDaoImp();
             Users nUser = new Users(Name.getText(), email.getText(), password.getText(), "Secretaire");
             usr.create(nUser);
+            AdminPanel.stage.close();
         }
 
     }

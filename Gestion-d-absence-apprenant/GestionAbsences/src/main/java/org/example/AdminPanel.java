@@ -1,47 +1,74 @@
 package org.example;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.example.DAO.*;
+import org.example.Model.Apprenant;
+import org.example.Model.Formateur;
+import org.example.Model.StudentV2;
 import org.example.Model.Users;
 import org.example.Service.ServiceApprenant;
+import org.example.Service.ServiceFormateur;
+import org.example.Service.ServiceSecretaire;
+
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdminPanel implements Initializable {
+
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public static Stage stage;
     public VBox studentPanel;
     public VBox formateuPanel;
     public VBox secrePanel;
-    public TableView<Users> userTable;
-    public TableColumn student_id;
+    public TableView<StudentV2> userTable;
+
     public TableColumn student_name;
     public TableColumn student_email;
     public TableColumn student_class;
-    public TableColumn formateur_id;
+
     public TableColumn formateur_name;
     public TableColumn formateur_email;
     public TableColumn formateur_class;
-    public TableView formateurTable;
-    public TableView secreTable;
 
-    public TableColumn sec_id;
+    public TableView<StudentV2> formateurTable;
+    public TableView<Users> secreTable;
+
     public TableColumn sec_name;
     public TableColumn sec_email;
-    public TableColumn formateur_class1;
+
+    public VBox updateForm;
+    public Button updateBTN;
+
+    public Button updateStudent;
+    public ChoiceBox classes;
+    public Button updateBT;
+    public VBox updateFor;
+    public ChoiceBox classi;
+
 
     private int window = 1;
 
 
-    public void displayStude(MouseEvent mouseEvent) throws SQLException {
+    public void displayStude(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         studentPanel.setVisible(true);
         formateuPanel.setVisible(false);
         secrePanel.setVisible(false);
@@ -50,7 +77,7 @@ public class AdminPanel implements Initializable {
 
     }
 
-    public void displayform(MouseEvent mouseEvent) throws SQLException {
+    public void displayform(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         studentPanel.setVisible(false);
         formateuPanel.setVisible(true);
         secrePanel.setVisible(false);
@@ -59,7 +86,7 @@ public class AdminPanel implements Initializable {
         extracted();
     }
 
-    public void displaySere(MouseEvent mouseEvent) throws SQLException {
+    public void displaySere(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         studentPanel.setVisible(false);
         formateuPanel.setVisible(false);
         secrePanel.setVisible(true);
@@ -72,40 +99,32 @@ public class AdminPanel implements Initializable {
         return super.clone();
     }
 
-    private void display(String type, TableColumn id, TableColumn name, TableColumn email, TableColumn c, TableView<Users> table) throws SQLException {
-        ServiceApprenant usess = new ServiceApprenant();
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
-        email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        //TODO display class insted of type
-        c.setCellValueFactory(new PropertyValueFactory<>("type"));
-        table.setItems(usess.collectApprenants(type));
-    }
-    private void display(String type, TableColumn id, TableColumn name, TableColumn email,TableView<Users> table) throws SQLException {
-        ServiceApprenant usess = new ServiceApprenant();
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        name.setCellValueFactory(new PropertyValueFactory<>("full_name"));
-        email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        table.setItems(usess.collectApprenants(type));
-    }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             extracted();
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             System.out.println(throwables.getMessage());
+        }
+        try {
+            setDropDown(classes);
+            setDropDown(classi);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 
-    private void extracted() throws SQLException {
-        if (window == 1){
-            display("Apprenant", student_id,student_name,student_email,student_class,userTable);
-        }else if (window == 2){
-            display("Formateur", formateur_id,formateur_name,formateur_email,formateur_class, formateurTable);
-        }else {
-            display("Secretaire", sec_id,sec_name,sec_email,secreTable);
+
+    public void extracted() throws SQLException, ClassNotFoundException {
+        if (window == 1) {
+            ServiceApprenant usess = new ServiceApprenant();
+            usess.display("Apprenant", student_name, student_email, student_class, userTable);
+        } else if (window == 2) {
+            ServiceFormateur usess = new ServiceFormateur();
+            usess.display("Formateur", formateur_name, formateur_email, formateur_class, formateurTable, 1);
+        } else {
+            ServiceSecretaire usess = new ServiceSecretaire();
+            usess.display("Secretaire", sec_name, sec_email, secreTable);
         }
     }
 
@@ -124,8 +143,9 @@ public class AdminPanel implements Initializable {
         popUp("setNewSecretaire");
 
     }
+
     private void popUp(String pop) throws IOException {
-        Stage stage = new Stage();
+        stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(pop + ".fxml"));
         stage.setTitle("Ajouté nevaeu utilisateur");
         stage.setScene(new Scene(root));
@@ -133,4 +153,73 @@ public class AdminPanel implements Initializable {
     }
 
 
+    public void DeleteUser(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        UserDao deleteUser = new UserDaoImp();
+        switch (window) {
+            case 1:
+                if (!userTable.getSelectionModel().isEmpty())
+                    deleteUser.deleteById(userTable.getSelectionModel().getSelectedItem().getId());
+            case 2:
+                if (!formateurTable.getSelectionModel().isEmpty())
+                    deleteUser.deleteById(formateurTable.getSelectionModel().getSelectedItem().getId());
+            case 3:
+                if (!secreTable.getSelectionModel().isEmpty())
+                    deleteUser.deleteById(secreTable.getSelectionModel().getSelectedItem().getId());
+        }
+        extracted();
+    }
+
+    public void UpdateUser(MouseEvent mouseEvent) throws SQLException {
+        updateForm.setVisible(true);
+        updateBTN.setVisible(false);
+    }
+
+    //TODO remove duplicate of this method from SetNewUser file
+    private void setDropDown(ChoiceBox classs) throws SQLException {
+        ObservableList<String> clas = FXCollections.observableArrayList();
+        ClassesDAO data = new ClassesDAOImpl();
+        ResultSet the_classes = data.getClasses();
+        while (the_classes.next()) {
+            clas.add(the_classes.getString("classe"));
+        }
+
+        classs.getItems().addAll(clas);
+    }
+
+    public void UpdateStudent(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        if (window == 1) {
+            updateApprenant(new ClassesDAOImpl());
+        } else if (window == 2) {
+            updateFormateur(new ClassesDAOImpl());
+        }
+        extracted();
+    }
+
+    public void UpdateForma(MouseEvent mouseEvent) {
+        updateBT.setVisible(false);
+        updateFor.setVisible(true);
+    }
+
+
+    private void updateFormateur(ClassesDAO id) throws SQLException {
+        ResultSet index = id.getIndexof((String) classi.getValue());
+        FormateurDao formateur = new FormateurDaoImp();
+        if (index.next()) {
+            Formateur formateur1 = new Formateur(formateurTable.getSelectionModel().getSelectedItem().getId(), index.getInt("id"));
+            formateur.updateFormateur(formateur1);
+        }
+        updateBT.setVisible(true);
+        updateFor.setVisible(false);
+    }
+
+    private void updateApprenant(ClassesDAO id) throws SQLException {
+        ResultSet index = id.getIndexof((String) classes.getValue());
+        ApprenantDao apprenant = new ApprenantDaoImp();
+        if (index.next()) {
+            Apprenant student = new Apprenant(userTable.getSelectionModel().getSelectedItem().getId(), index.getInt("id"));
+            apprenant.updateClass(student);
+        }
+        updateForm.setVisible(false);
+        updateBTN.setVisible(true);
+    }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Gestion-d-absence.iml" filepath="$PROJECT_DIR$/.idea/Gestion-d-absence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Gestion-d-absence-apprenant.iml" filepath="$PROJECT_DIR$/.idea/Gestion-d-absence-apprenant.iml" />
       <module fileurl="file://$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/GestionAbsences.iml" filepath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/GestionAbsences.iml" />
     </modules>
   </component>

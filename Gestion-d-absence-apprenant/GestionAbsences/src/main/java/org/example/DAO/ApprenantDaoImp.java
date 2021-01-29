@@ -4,33 +4,53 @@ import org.example.Model.Apprenant;
 import org.example.MysqlConnect.Connexion;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
+
+import static org.example.MysqlConnect.Connexion.connect;
 
 
 public class ApprenantDaoImp implements ApprenantDao {
 
 
     @Override
-    public Long getById(Long id) throws ClassNotFoundException, SQLException {
+    public ResultSet getById(int id) throws ClassNotFoundException, SQLException {
         try {
-            String sql = "SELECT * FROM `users` WHERE id= ?  ";
 
-
+            String sql = "SELECT * FROM `Students` WHERE user_id= ? ";
             PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
-            stmt.executeQuery();
-            System.out.printf("Done");
-            return id;
+            stmt.setInt(1, id);
+            return stmt.executeQuery();
         } catch (SQLException e) {
-            System.out.printf("Not Done");
-        }finally {
-            if(Connexion.connect() != null){
+            System.out.println(e.getMessage());
+        } finally {
+            if (Connexion.connect() != null) {
                 Connexion.connect().close();
             }
         }
-        return id;
+        return null;
     }
+
+    @Override
+    public void updateClass(Apprenant apprenant) throws SQLException {
+        try {
+            var sql = "UPDATE Students SET `classe_id`= ? WHERE user_id = ?";
+            PreparedStatement stmt = Objects.requireNonNull(connect()).prepareStatement(sql);
+            stmt.setInt(1, apprenant.getClass_id());
+            stmt.setInt(2, apprenant.getUser_id());
+            stmt.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (connect() != null) {
+                Objects.requireNonNull(connect()).close();
+            }
+        }
+    }
+
     @Override
     public String setApprenant(Apprenant apprenant) throws SQLException {
         return null;
@@ -45,6 +65,7 @@ public class ApprenantDaoImp implements ApprenantDao {
     public String getBySpeciality(String speciality) throws ClassNotFoundException, SQLException {
         return null;
     }
+
 
 
 }

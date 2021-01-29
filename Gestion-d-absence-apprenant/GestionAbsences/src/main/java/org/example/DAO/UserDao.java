@@ -21,5 +21,7 @@ public interface UserDao {
 
     ResultSet  getIndex(Users usr) throws SQLException;
 
+    ResultSet getUserById(int id) throws SQLException;
+
 
 }

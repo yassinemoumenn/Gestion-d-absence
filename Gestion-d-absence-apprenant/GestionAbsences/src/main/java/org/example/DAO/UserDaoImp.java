@@ -109,4 +109,23 @@ public class UserDaoImp  implements UserDao{
         }
         return null;
     }
+
+    @Override
+    public ResultSet getUserById(int id) throws SQLException {
+
+            try {
+                String sql = "SELECT * FROM `Users` WHERE id= ? ";
+                PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
+                stmt.setInt(1, id);
+                return stmt.executeQuery();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }finally {
+                if(Connexion.connect() != null){
+                    Connexion.connect().close();
+                }
+            }
+            return null;
+        }
+
 }
