@@ -21,10 +21,30 @@ public  class FormateurDaoImp extends Connexion implements FormateurDao{
     public ResultSet getAll() throws SQLException {
         return null;
     }
+
     @Override
-    public String setAbsence(Absences absences) throws SQLException {
-        return null;
+    public void insert(int Absence_type) {
+        Connection conn = null;
+        try{
+            String requete = "INSERT INTO  absences (`absence_type`)VALUES (?)";
+            PreparedStatement statement =  Objects.requireNonNull(connect()).prepareStatement(requete);
+
+            statement.setInt(1,Absence_type);
+
+            statement.executeUpdate();
+        }   catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
     }
+
 
 
 
@@ -33,7 +53,7 @@ public  class FormateurDaoImp extends Connexion implements FormateurDao{
         ObservableList<AffichageStudent> AbsenceStudents= FXCollections.observableArrayList();
         Connection conn = null;
         try {
-            String requete= "SELECT full_name FROM users,students WHERE users.id=students.user_id AND type=\"student\"";
+            String requete= "SELECT full_name FROM users,students WHERE users.id=students.user_id ";
             PreparedStatement statement = Objects.requireNonNull(connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
             AffichageStudent affichageStudent;

@@ -3,6 +3,8 @@ package org.example.Model;
 public class AffichageStudent {
  private String full_name;
 
+
+
  public AffichageStudent(){
 
  }

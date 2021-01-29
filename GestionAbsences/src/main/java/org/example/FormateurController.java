@@ -4,11 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import org.example.DAO.FormateurDaoImp;
+import org.example.Model.Absences;
 import org.example.Model.AffichageStudent;
 
 import java.net.URL;
@@ -23,9 +23,8 @@ public class FormateurController implements Initializable {
     private TableColumn<AffichageStudent, String> colfullname;
     @FXML
     private ComboBox type;
-
     @FXML
-    private ComboBox selectApprenant;
+    private TextField textName;
 
     public FormateurController() {
     }
@@ -44,7 +43,7 @@ public class FormateurController implements Initializable {
         }
 
     }
-
+    FormateurDaoImp formateurDaoImp =new  FormateurDaoImp();
     public ObservableList<AffichageStudent> getAllApprenants() throws SQLException, ClassNotFoundException{
         FormateurDaoImp formateur=new  FormateurDaoImp();
         ObservableList<AffichageStudent> apprenantList = formateur.AfficheStudentName();
@@ -57,22 +56,60 @@ public class FormateurController implements Initializable {
 
         colfullname.setCellValueFactory(new PropertyValueFactory<AffichageStudent, String>("full_name"));
 
-
-
-
         TableView.setItems(list);
+        TableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        TableView.getSelectionModel().setCellSelectionEnabled(true);
+
     }
 
 
     public void typeAbsence(){
 
         ObservableList typeAbsence = FXCollections.observableArrayList(
-                "Present","Demi_journée"
+                "Absent","Demi_journée"
         );
 
         type.setItems(typeAbsence);
 
 
     }
+    int index = -1;
+    public void clickColumn(MouseEvent mouseEvent) {
+        index = TableView.getSelectionModel().getSelectedIndex();
 
-}
+
+        if (index <= -1){
+
+            return;
+        }
+        textName.setText(colfullname.getCellData(index).toString());
+
+
+
+    }
+    @FXML
+    public void addbtn(){
+
+        FormateurDaoImp formateurDAOImp = new FormateurDaoImp();
+        String student = String.valueOf(textName.getText());
+        String absencetype = (String) type.getValue();
+
+        System.out.println(student+absencetype);
+
+
+
+    }
+
+    }
+
+
+
+
+    /*TablePosition tablePosition =TableView.getSelectionModel().getSelectedCells().get(0);
+        int row= tablePosition.getRow();
+       //colfullname item=TableView.getItems().get(row);
+
+
+        System.out.println("check");
+*/
+

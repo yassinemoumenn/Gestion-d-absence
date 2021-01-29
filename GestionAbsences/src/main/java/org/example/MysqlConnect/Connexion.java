@@ -8,7 +8,7 @@ public abstract class Connexion {
     private static String user = "root";
     private static String password = "";
     //private static String url = "jdbc:mysql://localhost:3306/douae";
-    private static String url = "jdbc:mysql://localhost:3306/douae?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Africa/Casablanca";
+    private static String url = "jdbc:mysql://localhost:3306/gestion_absence?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Africa/Casablanca";
 
     public static Connection connect() {
         try {
