@@ -11,8 +11,8 @@
         <TableView fx:id="TableView" layoutX="561.0" layoutY="309.0" onMouseClicked="#clickColumn" prefHeight="286.0" prefWidth="607.0">
             <columns>
                 <TableColumn fx:id="colfullname" minWidth="0.0" prefWidth="191.0" text="Nom et Prénom" />
-                <TableColumn fx:id="colfullname1" minWidth="0.0" prefWidth="213.0" text="Absent(e)" />
-                <TableColumn fx:id="colfullname111" minWidth="0.0" prefWidth="206.0" text="Demi journée" />
+                <TableColumn fx:id="ab" minWidth="0.0" prefWidth="213.0" text="Absent(e)" />
+                <TableColumn fx:id="dj" minWidth="0.0" prefWidth="206.0" text="Demi journée" />
             </columns>
         </TableView>
         <Pane layoutX="214.0" layoutY="87.0" onMouseClicked="#clickColumn" prefHeight="135.0" prefWidth="855.0">

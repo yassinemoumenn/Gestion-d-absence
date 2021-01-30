@@ -12,7 +12,7 @@ public interface FormateurDao {
 
     ResultSet getAll() throws SQLException;
 
-    public void insert(int Absence_type);
+    public void setAbsence(String type,int id);
 
     public ObservableList<AffichageStudent>AfficheStudentName();
 }
