@@ -2,6 +2,7 @@ package org.example;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -23,9 +24,7 @@ public class FormateurController implements Initializable {
     @FXML
     private TableColumn<AffichageStudent, String> colfullname;
     @FXML
-    private TableColumn<Absences, String> dj;
-    @FXML
-    private TableColumn<Absences, String> ab;
+     private  TableColumn ab;
     @FXML
     private ComboBox type;
     @FXML
@@ -33,8 +32,7 @@ public class FormateurController implements Initializable {
 
     @FXML
     private Button insert;
-    @FXML
-    private TextField id;
+   
 
     public FormateurController() {
     }
@@ -99,7 +97,20 @@ public class FormateurController implements Initializable {
         textName.setText(colfullname.getCellData(index).toString());
 
 
+
     }
+
+    public void addbtn(ActionEvent actionEvent) {
+        FormateurDaoImp formateurDaoImp1 = new FormateurDaoImp();
+        //String student = textName.getText();
+        String typeab = (String)type.getValue();
+        System.out.println(typeab);
+        Absences absences = new Absences(typeab);
+        formateurDaoImp1.setAbsence(absences);
+
+
+    }
+
 }
 
 

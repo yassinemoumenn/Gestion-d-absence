@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="755.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FormateurController">
+<AnchorPane prefHeight="755.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FormateurController">
     <children>
-        <TableView fx:id="TableView" layoutX="561.0" layoutY="309.0" onMouseClicked="#clickColumn" prefHeight="286.0" prefWidth="607.0">
+        <TableView fx:id="TableView" layoutX="561.0" layoutY="309.0" onMouseClicked="#clickColumn" prefHeight="286.0" prefWidth="406.0">
             <columns>
                 <TableColumn fx:id="colfullname" minWidth="0.0" prefWidth="191.0" text="Nom et Prénom" />
-                <TableColumn fx:id="ab" minWidth="0.0" prefWidth="213.0" text="Absent(e)" />
-                <TableColumn fx:id="dj" minWidth="0.0" prefWidth="206.0" text="Demi journée" />
+                <TableColumn fx:id="ab" minWidth="0.0" prefWidth="213.0" text="Absence" />
             </columns>
         </TableView>
         <Pane layoutX="214.0" layoutY="87.0" onMouseClicked="#clickColumn" prefHeight="135.0" prefWidth="855.0">
@@ -39,12 +36,12 @@
                 <Font name="Arial Black" size="26.0" />
             </font>
         </Text>
-        <Button fx:id="insert" layoutX="313.0" layoutY="473.0" mnemonicParsing="false" onAction="#addbtn" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #0000ff;" text="Insert" textFill="#f8f7f7">
+        <Button fx:id="insert" layoutX="277.0" layoutY="459.0" mnemonicParsing="false" onAction="#addbtn" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #0000ff;" text="Insert" textFill="#f8f7f7">
             <font>
                 <Font name="System Bold" size="19.0" />
             </font>
         </Button>
-          <ComboBox fx:id="type" layoutX="213.0" layoutY="394.0" prefHeight="39.0" prefWidth="176.0" />
+          <ComboBox fx:id="type" layoutX="213.0" layoutY="394.0" prefHeight="25.0" prefWidth="149.0" />
           <Label layoutX="79.0" layoutY="395.0" prefHeight="38.0" prefWidth="112.0" text="type" />
       <TextField fx:id="textName" layoutX="214.0" layoutY="323.0" />
       <Label layoutX="64.0" layoutY="329.0" text="Nom et Prenom" />

@@ -8,7 +8,7 @@ public class Absences {
     Date date;
     int Absence_type;
 
-    public Absences() {
+    public Absences(String typeab) {
     }
 
     public Absences(int id, int student_id, Date date, int absence_type) {

@@ -4,10 +4,8 @@ public class AffichageStudent {
  private String full_name;
 
 
-
- public AffichageStudent(){
-
- }
+    public AffichageStudent() {
+    }
 
     public AffichageStudent(String full_name) {
         this.full_name = full_name;
