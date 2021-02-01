@@ -70,8 +70,8 @@ public class FormateurController implements Initializable {
 
 
         TableView.setItems(list);
-        TableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        TableView.getSelectionModel().setCellSelectionEnabled(true);
+        //TableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        //TableView.getSelectionModel().setCellSelectionEnabled(true);
 
     }
 
@@ -98,6 +98,7 @@ public class FormateurController implements Initializable {
             return;
         }
         textName.setText(colfullname.getCellData(index).toString());
+        type.setValue(ab.getCellData(index).toString());
 
 
 
