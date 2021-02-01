@@ -12,6 +12,7 @@ import org.example.DAO.FormateurDaoImp;
 import org.example.Model.Absences;
 import org.example.Model.AffichageStudent;
 
+
 import javax.swing.*;
 import java.net.URL;
 import java.sql.SQLException;
@@ -24,7 +25,7 @@ public class FormateurController implements Initializable {
     @FXML
     private TableColumn<AffichageStudent, String> colfullname;
     @FXML
-     private  TableColumn ab;
+     private  TableColumn <AffichageStudent, String>ab;
     @FXML
     private ComboBox type;
     @FXML
@@ -65,6 +66,8 @@ public class FormateurController implements Initializable {
         ObservableList<AffichageStudent> list = getAllApprenants();
 
         colfullname.setCellValueFactory(new PropertyValueFactory<AffichageStudent, String>("full_name"));
+        ab.setCellValueFactory(new PropertyValueFactory<AffichageStudent, String>("type_ab"));
+
 
         TableView.setItems(list);
         TableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -105,8 +108,8 @@ public class FormateurController implements Initializable {
         //String student = textName.getText();
         String typeab = (String)type.getValue();
         System.out.println(typeab);
-        Absences absences = new Absences(typeab);
-        formateurDaoImp1.setAbsence(absences);
+       // Absences absences = new Absences(typeab);
+        //formateurDaoImp1.setAbsence(absences);
 
 
     }

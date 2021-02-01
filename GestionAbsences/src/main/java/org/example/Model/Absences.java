@@ -3,22 +3,23 @@ package org.example.Model;
 import java.util.Date;
 
 public class Absences {
-    int id ;
-    int Student_id;
-    Date date;
-    int Absence_type;
+    private int id ;
+    private int Student_id;
+    private Date date;
+    private int Absence_type;
 
-    public Absences(String typeab) {
+
+    public Absences(String full_name, String type_ab) {
     }
 
-    public Absences(int id, int student_id, Date date, int absence_type) {
+
+    public Absences( int id, int student_id, Date date, int absence_type) {
         this.id = id;
         Student_id = student_id;
         this.date = date;
         Absence_type = absence_type;
 
     }
-
 
     public int getId() {
         return id;
@@ -51,4 +52,6 @@ public class Absences {
     public void setAbsence_type(int absence_type) {
         Absence_type = absence_type;
     }
+
+
 }

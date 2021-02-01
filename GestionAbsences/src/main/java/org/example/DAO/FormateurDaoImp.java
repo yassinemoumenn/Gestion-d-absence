@@ -53,12 +53,12 @@ public  class FormateurDaoImp extends Connexion implements FormateurDao{
         ObservableList<AffichageStudent> AbsenceStudents= FXCollections.observableArrayList();
         Connection conn = null;
         try {
-            String requete= "SELECT full_name FROM users,students WHERE users.id=students.user_id ";
+            String requete= "select full_name,type_ab from users,students,absences,absence_type where users.id=students.user_id and absence_type.id= absences.Absence_type=absence_type.type_ab";
             PreparedStatement statement = Objects.requireNonNull(connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
             AffichageStudent affichageStudent;
             while (rs.next()) {
-                affichageStudent = new  AffichageStudent(rs.getString("full_name"));
+                affichageStudent = new AffichageStudent(rs.getString("full_name"),rs.getString("type_ab"));
                 AbsenceStudents.add(affichageStudent);
             }
         } catch (SQLException throwables) {
