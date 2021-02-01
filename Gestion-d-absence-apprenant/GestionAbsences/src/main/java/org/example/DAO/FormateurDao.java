@@ -1,5 +1,7 @@
 package org.example.DAO;
 
+import javafx.collections.ObservableList;
+import org.example.Model.AffichageStudent;
 import org.example.Model.Formateur;
 
 import java.sql.ResultSet;
@@ -18,5 +20,5 @@ public interface FormateurDao {
 
     void updateFormateur(Formateur formateur) throws SQLException;
 
-//    public ObservableList<AffichageStudent>AfficheStudentName();
+    public ObservableList<AffichageStudent> AfficheStudentName();
 }

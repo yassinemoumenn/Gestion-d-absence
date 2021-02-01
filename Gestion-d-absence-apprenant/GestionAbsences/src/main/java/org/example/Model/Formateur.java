@@ -1,14 +1,13 @@
 package org.example.Model;
 
-public class Formateur{
+public class Formateur  {
 
     private int id;
     private int user_id;
     private int class_id;
 
-    public Formateur(int user_id, int class_id) {
-        this.user_id = user_id;
-        this.class_id = class_id;
+    public Formateur(){
+
     }
 
     public Formateur(int id, int user_id, int class_id) {
@@ -17,7 +16,9 @@ public class Formateur{
         this.class_id = class_id;
     }
 
-    public Formateur() {
+    public Formateur(int user_id, int class_id) {
+        this.user_id = user_id;
+        this.class_id = class_id;
     }
 
     public int getId() {
