@@ -26,7 +26,7 @@ public  class FormateurDaoImp extends Connexion implements FormateurDao{
 
         Connection conn = null;
         try{
-            String requete = "INSERT INTO absences (`absence_type`,`student_id` ) VALUES (??)";
+            String requete = "INSERT INTO absences (`absence_type`,`student_id` ) VALUES (?)";
             PreparedStatement statement =  Objects.requireNonNull(connect()).prepareStatement(requete);
             statement.setInt(1,Absence_type.getAbsence_type());
             statement.executeUpdate();
@@ -53,12 +53,12 @@ public  class FormateurDaoImp extends Connexion implements FormateurDao{
         ObservableList<AffichageStudent> AbsenceStudents= FXCollections.observableArrayList();
         Connection conn = null;
         try {
-            String requete= "select full_name,type_ab from users,students,absences,absence_type where users.id=students.user_id and absence_type.id= absences.Absence_type=absence_type.type_ab";
-            PreparedStatement statement = Objects.requireNonNull(connect()).prepareStatement(requete);
+            String requete= "SELECT u.full_name, t.type FROM Users u INNER JOIN Students s ON u.id = s.user_id INNER JOIN Absences a ON s.id = a.Student_id INNER JOIN Absence_type t ON t.id = a.Absence_type WHERE u.type = 'Apprenant'";
+            PreparedStatement statement = Objects.requireNonNull(Connexion.connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
             AffichageStudent affichageStudent;
             while (rs.next()) {
-                affichageStudent = new AffichageStudent(rs.getString("full_name"),rs.getString("type_ab"));
+                affichageStudent = new AffichageStudent(rs.getString("full_name"),rs.getString("type"));
                 AbsenceStudents.add(affichageStudent);
             }
         } catch (SQLException throwables) {

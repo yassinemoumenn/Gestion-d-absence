@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public abstract class Connexion {
     private static String user = "root";
     private static String password = "";
-    private static String url = "jdbc:mysql://localhost:3306/gestionabsence?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Africa/Casablanca";
+    private static String url = "jdbc:mysql://localhost:3306/Gestion_Absence";
     public static Connection connect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
