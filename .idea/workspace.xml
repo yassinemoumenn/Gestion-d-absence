@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="fix bug">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/Login.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +97,7 @@
         <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -129,9 +125,8 @@
       <workItem from="1611578722271" duration="8178000" />
       <workItem from="1611648629678" duration="7399000" />
       <workItem from="1611839258395" duration="59000" />
-      <workItem from="1612119239096" duration="15000" />
-      <workItem from="1612170153051" duration="763000" />
-      <workItem from="1612340651024" duration="1362000" />
+      <workItem from="1611920602458" duration="314000" />
+      <workItem from="1612350566018" duration="701000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1611318414954</created>
@@ -151,13 +146,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="TEXT_FILTER_SETTINGS">
-                <TextFilterSettings>
-                  <option name="MATCH_CASE" value="true" />
-                </TextFilterSettings>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
