@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="fix bug">
-      <change beforePath="$PROJECT_DIR$/GestionAbsences/GestionAbsences.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_15_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_15_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_linux_15_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_15_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/SecretaireDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/SecretaireDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/MysqlConnect/Connexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/MysqlConnect/Connexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/DAO/SecretaireDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/DAO/SecretaireDaoImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/MysqlConnect/Connexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/target/classes/org/example/MysqlConnect/Connexion.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +87,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="GestionAbsences" />
       <extension name="coverage">
@@ -91,8 +100,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.App" />
@@ -157,6 +180,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GestionAbsences$app.ic" NAME="app Coverage Results" MODIFIED="1611756769994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/GestionAbsences$App.ic" NAME="App Coverage Results" MODIFIED="1611263692855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
