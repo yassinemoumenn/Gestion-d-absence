@@ -9,11 +9,12 @@ public class Absences {
     private int Absence_type;
 
 
-    public Absences(String full_name, String type_ab) {
+    public Absences(int student_id, int absence_type) {
+        Student_id = student_id;
+        Absence_type = absence_type;
     }
 
-
-    public Absences( int id, int student_id, Date date, int absence_type) {
+    public Absences(int id, int student_id, Date date, int absence_type) {
         this.id = id;
         Student_id = student_id;
         this.date = date;

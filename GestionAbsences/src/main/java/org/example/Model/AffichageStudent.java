@@ -1,6 +1,7 @@
 package org.example.Model;
 
 public class AffichageStudent {
+    private  int id;
  private String full_name;
     private String type_ab;
 
@@ -9,9 +10,18 @@ public class AffichageStudent {
     public AffichageStudent() {
     }
 
-    public AffichageStudent(String full_name, String type_ab) {
+    public AffichageStudent(int id, String full_name, String type_ab) {
+        this.id = id;
         this.full_name = full_name;
         this.type_ab = type_ab;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFull_name() {
