@@ -39,10 +39,7 @@ public class Contrapprenant implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-//            if (Login.std_id != 0) {
-            getApprenantInfos(31);
-            getStudentsAbsences(31);
-//            }
+            getApprenantInfos(67);
 
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
@@ -60,32 +57,24 @@ public class Contrapprenant implements Initializable {
 
     //role : get name the classe of this students
     private void getApprenantInfos(int user_id) throws SQLException, ClassNotFoundException {
-        UserDao apprenant = new UserDaoImp();
-        //get name of user from Users table
-        ResultSet apprenantDetails = apprenant.getUserById(user_id);
-        if (apprenantDetails.next()) {
-            //get name of the students and display it in the screen
-            String name = apprenantDetails.getString(2);
-            LabelFull_name.setText(name);
-            ApprenantDao apprenantExtraInfos = new ApprenantDaoImp();
-
-            //get id and class_id from Students table
-            ResultSet classeDetiales = apprenantExtraInfos.getById(apprenantDetails.getInt(1));
-
-            if (classeDetiales.next()) {
-                //git classe info
-                int classe_id = classeDetiales.getInt(3);
-
-                ClassesDAO ApprenantsClasse = new ClassesDAOImpl();
-
-                ResultSet classeInfo = ApprenantsClasse.getClassById(classeDetiales.getInt(3));
-                if (classeInfo.next()) {
-                    labelClass_id.setText(classeInfo.getString("classe"));
-                }
-
+        ApprenantDao apprenant = new ApprenantDaoImp();
+        ResultSet rs = apprenant.getById(user_id);
+        if (rs.next()) {
+            UserDao u_apprenant = new UserDaoImp();
+//        //get name of user from Users table
+            ResultSet apprenantDetails = u_apprenant.getUserById(rs.getInt("user_id"));
+            if (apprenantDetails.next()) {
+                String name = apprenantDetails.getString("full_name");
+                LabelFull_name.setText(name);
             }
-
+            ClassesDAO clas = new ClassesDAOImpl();
+            ResultSet classeDetiales = clas.getClassById(rs.getInt("classe_id"));
+            if (classeDetiales.next()) {
+                labelClass_id.setText(classeDetiales.getString("classe"));
+            }
+            getStudentsAbsences(rs.getInt("id"));
         }
+
     }
 }
 

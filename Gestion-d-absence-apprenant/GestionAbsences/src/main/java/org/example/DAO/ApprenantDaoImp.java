@@ -18,7 +18,7 @@ public class ApprenantDaoImp implements ApprenantDao {
     @Override
     public ResultSet getById(int id) throws ClassNotFoundException, SQLException {
         try {
-            String sql = "SELECT * FROM `Students` WHERE user_id= ? ";
+            String sql = "SELECT * FROM `Students` WHERE user_id = ?";
             PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
             stmt.setInt(1, id);
             return stmt.executeQuery();
