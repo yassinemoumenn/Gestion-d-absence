@@ -49,7 +49,7 @@ public class SecretaireDaoImp  extends Connexion implements SecretaireDao{
 
         Connection conn = null;
         try{
-            String requete = "Update absences set jistification= ? where Student_id = ?";
+            String requete = "Update Absences set jistification= ? where Student_id = ?";
             PreparedStatement statement =  Objects.requireNonNull(connect()).prepareStatement(requete);
 
             statement.setString(1, justification);
