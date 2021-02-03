@@ -14,11 +14,13 @@ import org.example.Model.Apprenant;
 import org.example.Model.Formateur;
 import org.example.Model.Users;
 import org.example.Service.ServiceApprenant;
+import org.example.Service.ServiceUser;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class SetNewUser extends AdminPanel implements Initializable {
     public TextField userName;
@@ -27,6 +29,7 @@ public class SetNewUser extends AdminPanel implements Initializable {
     public TextField email;
     public Label msgField;
     ObservableList<String> classes = FXCollections.observableArrayList();
+    private static final Pattern pattern = Pattern.compile("^[A-Za-z]\\w{5,29}$");
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,13 +52,13 @@ public class SetNewUser extends AdminPanel implements Initializable {
 
     public void setUser(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         if (!userName.getText().equals("") && !password.getText().equals("") && !email.getText().equals("")) {
-            if (email.getText().matches("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$")) {
+            if (email.getText().matches("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$") && pattern.matcher(userName.getText()).matches()) {
 
                 ClassesDAO id = new ClassesDAOImpl();
                 ResultSet index = id.getIndexof(dropDown_classes.getValue());
                 if (index.next()) {
                     UserDao usr = new UserDaoImp();
-                    Users nUser = new Users(userName.getText(), email.getText(), password.getText(), "Apprenant");
+                    Users nUser = new Users(userName.getText(), email.getText(), ServiceUser.hashPassord(password.getText()) , "Apprenant");
                     usr.create(nUser);
                     ResultSet user_id = usr.getIndex(nUser);
                     if (user_id.next()) {
@@ -65,7 +68,6 @@ public class SetNewUser extends AdminPanel implements Initializable {
                 }
                 AdminPanel.stage.close();
 
-//             this.refres();
             }else{
                 msgField.setVisible(true);
                 msgField.setText("Please verify your infos ");
@@ -75,12 +77,12 @@ public class SetNewUser extends AdminPanel implements Initializable {
 
     public void setUserFormateur(MouseEvent mouseEvent) throws SQLException {
         if (!userName.getText().equals("") && !password.getText().equals("") && !email.getText().equals("")) {
-            if (email.getText().matches("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$")){
+            if (email.getText().matches("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$") && pattern.matcher(userName.getText()).matches()){
                 ClassesDAO id = new ClassesDAOImpl();
                 ResultSet index = id.getIndexof(dropDown_classes.getValue());
                 if (index.next()) {
                     UserDao usr = new UserDaoImp();
-                    Users nUser = new Users(userName.getText(), email.getText(), password.getText(), "Formateur");
+                    Users nUser = new Users(userName.getText(), email.getText(), ServiceUser.hashPassord(password.getText()), "Formateur");
                     usr.create(nUser);
                     ResultSet user_id = usr.getIndex(nUser);
                     if (user_id.next()) {

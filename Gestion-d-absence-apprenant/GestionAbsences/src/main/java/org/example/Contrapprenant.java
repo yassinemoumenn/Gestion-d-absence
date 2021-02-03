@@ -11,7 +11,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.DAO.*;
 import org.example.Model.Absences;
-import org.example.Model.Apprenant;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -19,6 +18,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Contrapprenant implements Initializable {
+    public static int std_id;
 
     @FXML
     private Label LabelFull_name;
@@ -36,26 +36,24 @@ public class Contrapprenant implements Initializable {
 
     public ObservableList<Absences> data = FXCollections.observableArrayList();
 
-    @FXML
-    public void getbyId() {
-
-
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            getApprenantInfos(42);
-            getStudentsAbsences(42);
+//            if (Login.std_id != 0) {
+            getApprenantInfos(31);
+            getStudentsAbsences(31);
+//            }
+
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
 
     }
+
     private void getStudentsAbsences(int student_id) throws SQLException {
         //get student absences
         AbsencesDAO absences = new AbsencesDAOImpl();
-        colAbs.setCellValueFactory(new PropertyValueFactory<>("Absence_type"));
+        colAbs.setCellValueFactory(new PropertyValueFactory<>("absence_typ"));
         colAbs_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         tableAbsence.getItems().addAll(absences.getStudenstAbsences(student_id));
     }
@@ -86,6 +84,7 @@ public class Contrapprenant implements Initializable {
                 }
 
             }
+
         }
     }
 }

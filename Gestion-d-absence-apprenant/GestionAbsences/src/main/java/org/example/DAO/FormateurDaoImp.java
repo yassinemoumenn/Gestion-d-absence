@@ -58,12 +58,12 @@ public class FormateurDaoImp implements FormateurDao {
     public ObservableList<AffichageStudent> AfficheStudentName() {
         ObservableList<AffichageStudent> AbsenceStudents= FXCollections.observableArrayList();
         try {
-            String requete= "SELECT u.full_name, t.type FROM Users u INNER JOIN Students s ON u.id = s.user_id INNER JOIN Absences a ON s.id = a.Student_id INNER JOIN Absence_type t ON t.id = a.Absence_type WHERE u.type = 'Apprenant'";
+            String requete= "SELECT u.full_name, t.type, s.id FROM Users u INNER JOIN Students s ON u.id = s.user_id INNER JOIN Absences a ON s.id = a.Student_id INNER JOIN Absence_type t ON t.id = a.Absence_type WHERE u.type = 'Apprenant'";
             PreparedStatement statement = Objects.requireNonNull(Connexion.connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
             AffichageStudent affichageStudent;
             while (rs.next()) {
-                affichageStudent = new AffichageStudent(rs.getString("full_name"),rs.getString("type"));
+                affichageStudent = new AffichageStudent(rs.getString("full_name"),rs.getString("type"), rs.getInt("id"));
                 AbsenceStudents.add(affichageStudent);
             }
         } catch (SQLException throwables) {

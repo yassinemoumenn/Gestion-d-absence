@@ -25,7 +25,7 @@ public class FormateurController implements Initializable {
     @FXML
     private TableColumn<AffichageStudent, String> colfullname;
     @FXML
-     private  TableColumn <AffichageStudent, String>ab;
+     private  TableColumn <AffichageStudent, String> ab;
     @FXML
     private ComboBox type;
     @FXML
