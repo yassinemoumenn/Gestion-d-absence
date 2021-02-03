@@ -19,6 +19,7 @@ import org.example.Model.Formateur;
 import org.example.Model.StudentV2;
 import org.example.Model.Users;
 import org.example.Service.ServiceApprenant;
+import org.example.Service.ServiceClasses;
 import org.example.Service.ServiceFormateur;
 import org.example.Service.ServiceSecretaire;
 
@@ -31,9 +32,10 @@ import java.util.ResourceBundle;
 public class AdminPanel implements Initializable {
 
 
-    public Stage getStage() {
-        return stage;
-    }
+    public VBox classView;
+    public TableView<org.example.Model.classes> classTable;
+    public TableColumn class_name;
+    public TableColumn class_formateur;
 
     public static Stage stage;
     public VBox studentPanel;
@@ -64,14 +66,14 @@ public class AdminPanel implements Initializable {
     public VBox updateFor;
     public ChoiceBox classi;
 
-
     private int window = 1;
 
-
+    //this 4 function control with table should display
     public void displayStude(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
         studentPanel.setVisible(true);
         formateuPanel.setVisible(false);
         secrePanel.setVisible(false);
+        classView.setVisible(false);
         window = 1;
         extracted();
 
@@ -81,8 +83,8 @@ public class AdminPanel implements Initializable {
         studentPanel.setVisible(false);
         formateuPanel.setVisible(true);
         secrePanel.setVisible(false);
+        classView.setVisible(false);
         window = 2;
-
         extracted();
     }
 
@@ -90,13 +92,18 @@ public class AdminPanel implements Initializable {
         studentPanel.setVisible(false);
         formateuPanel.setVisible(false);
         secrePanel.setVisible(true);
+        classView.setVisible(false);
         window = 3;
         extracted();
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public void displayClasses(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        studentPanel.setVisible(false);
+        formateuPanel.setVisible(false);
+        secrePanel.setVisible(false);
+        classView.setVisible(true);
+        window = 4;
+        extracted();
     }
 
     @Override
@@ -107,24 +114,26 @@ public class AdminPanel implements Initializable {
             System.out.println(throwables.getMessage());
         }
         try {
-            setDropDown(classes);
-            setDropDown(classi);
+            setdropdown(classes);
+            setdropdown(classi);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-
     public void extracted() throws SQLException, ClassNotFoundException {
         if (window == 1) {
             ServiceApprenant usess = new ServiceApprenant();
-            usess.display("Apprenant", student_name, student_email, student_class, userTable);
+            usess.display("Apprenant", this.student_name, this.student_email, this.student_class, this.userTable);
         } else if (window == 2) {
             ServiceFormateur usess = new ServiceFormateur();
             usess.display("Formateur", formateur_name, formateur_email, formateur_class, formateurTable, 1);
-        } else {
+        } else if (window == 3) {
             ServiceSecretaire usess = new ServiceSecretaire();
             usess.display("Secretaire", sec_name, sec_email, secreTable);
+        } else {
+            ServiceClasses cl = new ServiceClasses();
+            cl.display(class_name, class_formateur, classTable);
         }
     }
 
@@ -139,15 +148,21 @@ public class AdminPanel implements Initializable {
 
     }
 
+    //pop for add new secreteir
     public void setNewSec(MouseEvent mouseEvent) throws IOException {
         popUp("setNewSecretaire");
 
     }
 
+    //pop for add new class
+    public void setNewClass(MouseEvent mouseEvent) throws IOException {
+        popUp("SetNewClasse");
+    }
+
     private void popUp(String pop) throws IOException {
         stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(pop + ".fxml"));
-        stage.setTitle("Ajouté nevaeu utilisateur");
+        stage.setTitle("Gestion d'Absence");
         stage.setScene(new Scene(root));
         stage.show();
     }
@@ -175,14 +190,13 @@ public class AdminPanel implements Initializable {
     }
 
     //TODO remove duplicate of this method from SetNewUser file
-    private void setDropDown(ChoiceBox classs) throws SQLException {
+    private void setdropdown(ChoiceBox classs) throws SQLException {
         ObservableList<String> clas = FXCollections.observableArrayList();
         ClassesDAO data = new ClassesDAOImpl();
         ResultSet the_classes = data.getClasses();
         while (the_classes.next()) {
             clas.add(the_classes.getString("classe"));
         }
-
         classs.getItems().addAll(clas);
     }
 
@@ -221,5 +235,21 @@ public class AdminPanel implements Initializable {
         }
         updateForm.setVisible(false);
         updateBTN.setVisible(true);
+    }
+
+
+    //this purpese of this function is to delete classes
+    public void DeleteClass(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+        if (!classTable.getSelectionModel().isEmpty()) {
+            ClassesDAO delete = new ClassesDAOImpl();
+            delete.deleteById(classTable.getSelectionModel().getSelectedItem().getId());
+            extracted();
+        }
+
+    }
+
+
+    public void refresh(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
+      extracted();
     }
 }

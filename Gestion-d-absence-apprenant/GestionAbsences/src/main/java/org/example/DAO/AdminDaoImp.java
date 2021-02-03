@@ -24,10 +24,6 @@ public class AdminDaoImp  implements AdminDao{
             return "Done!";
         } catch (SQLException e) {
             return e.getMessage();
-        } finally {
-            if (connect() != null) {
-                connect().close();
-            }
         }
     }
 
@@ -43,10 +39,6 @@ public class AdminDaoImp  implements AdminDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
 
@@ -62,10 +54,6 @@ public class AdminDaoImp  implements AdminDao{
             return "Done!";
         } catch (SQLException e) {
             return e.getMessage();
-        } finally {
-            if (connect() != null) {
-                connect().close();
-            }
         }
     }
 
@@ -81,10 +69,7 @@ public class AdminDaoImp  implements AdminDao{
             return "Done!";
         } catch (Exception e) {
             return e.getMessage();
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
+
 }

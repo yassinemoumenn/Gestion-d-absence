@@ -3,6 +3,7 @@ package org.example.MysqlConnect;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public abstract class Connexion {
     private static String user = "root";
@@ -18,6 +19,7 @@ public abstract class Connexion {
     }
 
 
-  /*  public abstract String setApprenant(Apprenant apprenant) throws SQLException;*/
 
 }
+
+

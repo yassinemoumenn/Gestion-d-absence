@@ -14,7 +14,7 @@ public class Users {
         this.type = type;
     }
 
-    public Users() {
+    public Users(int id_user, String full_name, String email, String password, String type) {
     }
 
     public int getId() {

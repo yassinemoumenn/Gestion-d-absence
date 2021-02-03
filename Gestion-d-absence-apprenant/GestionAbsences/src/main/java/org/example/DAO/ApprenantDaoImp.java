@@ -18,17 +18,12 @@ public class ApprenantDaoImp implements ApprenantDao {
     @Override
     public ResultSet getById(int id) throws ClassNotFoundException, SQLException {
         try {
-
             String sql = "SELECT * FROM `Students` WHERE user_id= ? ";
             PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
             stmt.setInt(1, id);
             return stmt.executeQuery();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (Connexion.connect() != null) {
-                Connexion.connect().close();
-            }
         }
         return null;
     }
@@ -44,10 +39,6 @@ public class ApprenantDaoImp implements ApprenantDao {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (connect() != null) {
-                Objects.requireNonNull(connect()).close();
-            }
         }
     }
 
@@ -65,7 +56,6 @@ public class ApprenantDaoImp implements ApprenantDao {
     public String getBySpeciality(String speciality) throws ClassNotFoundException, SQLException {
         return null;
     }
-
 
 
 }
