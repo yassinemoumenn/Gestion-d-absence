@@ -85,8 +85,6 @@ public class FormateurController implements Initializable {
         TableView.setItems(list);
 
         students = list;
-        //TableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        //TableView.getSelectionModel().setCellSelectionEnabled(true);
 
     }
 
@@ -96,8 +94,6 @@ public class FormateurController implements Initializable {
 
         FormateurDaoImp formateur = new FormateurDaoImp();
         ObservableList<Absence_type> typesList = formateur.GetTypes();
-
-        //selectApprenant.getItems().apprenantList;
         types = typesList;
 
         type.setItems(typesList.stream().map(absence_type -> absence_type.getType_ab()).collect(Collectors.collectingAndThen(toList(), l -> FXCollections.observableArrayList(l))));
@@ -124,7 +120,6 @@ public class FormateurController implements Initializable {
 
     public void addbtn(ActionEvent actionEvent) {
         FormateurDaoImp formateurDaoImp1 = new FormateurDaoImp();
-        //String student = textName.getText();
         String typeab = (String)type.getValue();
         System.out.println(typeab);
         Absence_type type = types.get(currentTypeIndex);
@@ -135,10 +130,6 @@ public class FormateurController implements Initializable {
         {
 
         }
-       // Absences absences = new Absences(typeab);
-        //formateurDaoImp1.setAbsence(absences);
-
-
     }
 
 }

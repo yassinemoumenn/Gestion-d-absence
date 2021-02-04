@@ -72,7 +72,7 @@ public  class FormateurDaoImp extends Connexion implements FormateurDao{
         ObservableList<Absence_type> AbsencesTypes= FXCollections.observableArrayList();
         Connection conn = null;
         try {
-            String requete= "select * from absence_type";
+            String requete= "SELECT  id , type AS type_ab FROM absence_type";
             PreparedStatement statement = Objects.requireNonNull(Connexion.connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
             Absence_type type;
@@ -103,7 +103,7 @@ public  class FormateurDaoImp extends Connexion implements FormateurDao{
         ObservableList<AffichageStudent> AbsenceStudents = FXCollections.observableArrayList();
         Connection conn = null;
         try {
-            String requete= "SELECT DISTINCT s.id, u.full_name, COALESCE(t.type_ab, 'Present') AS type_ab FROM users u INNER JOIN students s ON u.id = s.user_id left JOIN absences a ON s.id = a.student_id left JOIN absence_type t ON t.id = a.absence_type INNER JOIN teachers ts ON ts.classe_id =s.classe_id WHERE u.type = 'Apprenant'";
+            String requete= "SELECT DISTINCT s.id, u.full_name, COALESCE(t.type, 'Present') AS type_ab FROM users u INNER JOIN students s ON u.id = s.user_id left JOIN absences a ON s.id = a.student_id left JOIN absence_type t ON t.id = a.absence_type INNER JOIN teachers ts ON ts.classe_id =s.classe_id WHERE u.type = 'Apprenant'";
             PreparedStatement statement = Objects.requireNonNull(Connexion.connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
             AffichageStudent affichageStudent;
