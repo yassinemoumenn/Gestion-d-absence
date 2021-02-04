@@ -22,9 +22,6 @@ import java.sql.SQLException;
 public class Login {
     public static Stage stage;
 
-    public static int std_id = 0;
-
-
     @FXML
     private TextField EmailInput;
 
@@ -33,7 +30,7 @@ public class Login {
     @FXML
     private Button LoginButton;
 
-    public void login(MouseEvent mouseEvent) throws SQLException, IOException {
+    public void login(MouseEvent mouseEvent) throws SQLException, IOException, ClassNotFoundException {
 
         String email = EmailInput.getText();
         String password = mdpInput.getText();
@@ -53,23 +50,17 @@ public class Login {
             if (resultSet.getString("type").equals("Admin")) {
                 root = FXMLLoader.load(getClass().getResource("AdminPanel.fxml"));
                 stage.setScene(new Scene(root));
-            }
-            else if (resultSet.getString("type").equals("Formateur")) {
+            } else if (resultSet.getString("type").equals("Formateur")) {
                 root = FXMLLoader.load(getClass().getResource("Formateur.fxml"));
                 stage.setScene(new Scene(root));
-            }
-            else if (resultSet.getString("type").equals("Apprenant")) {
-                root = FXMLLoader.load(getClass().getResource("contrapprenant.fxml"));
-                stage.setScene(new Scene(root));
+            } else if (resultSet.getString("type").equals("Apprenant")) {
+                FXMLLoader root1 = new FXMLLoader(getClass().getResource("contrapprenant.fxml"));
+                Parent app = root1.load();
+                Contrapprenant screen = root1.getController();
+                screen.getApprenantInfos(resultSet.getInt("id"));
+                stage.setScene(new Scene(app));
 
-                PreparedStatement stmt = conn.prepareStatement("SELECT id FROM `Students` WHERE user_id= ?");
-                stmt.setInt(1, resultSet.getInt("id"));
-                ResultSet rs = stmt.executeQuery();
-                if (rs.next()) {
-                    std_id =  rs.getInt("id");
-                }
-            }
-            else if (resultSet.getString("type").equals("Secretaire")) {
+            } else if (resultSet.getString("type").equals("Secretaire")) {
                 root = FXMLLoader.load(getClass().getResource("secretaire.fxml"));
                 stage.setScene(new Scene(root));
             }

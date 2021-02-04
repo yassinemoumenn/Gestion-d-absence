@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.DAO.*;
 import org.example.Model.Absences;
+import org.example.Model.UserSession;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -18,7 +19,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Contrapprenant implements Initializable {
-    public static int std_id;
 
     @FXML
     private Label LabelFull_name;
@@ -38,12 +38,6 @@ public class Contrapprenant implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try {
-            getApprenantInfos(67);
-
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
-        }
 
     }
 
@@ -56,12 +50,13 @@ public class Contrapprenant implements Initializable {
     }
 
     //role : get name the classe of this students
-    private void getApprenantInfos(int user_id) throws SQLException, ClassNotFoundException {
+    public void getApprenantInfos(int user_id) throws SQLException, ClassNotFoundException {
+        System.out.println(user_id);
         ApprenantDao apprenant = new ApprenantDaoImp();
         ResultSet rs = apprenant.getById(user_id);
         if (rs.next()) {
             UserDao u_apprenant = new UserDaoImp();
-//        //get name of user from Users table
+            //get name of user from Users table
             ResultSet apprenantDetails = u_apprenant.getUserById(rs.getInt("user_id"));
             if (apprenantDetails.next()) {
                 String name = apprenantDetails.getString("full_name");
