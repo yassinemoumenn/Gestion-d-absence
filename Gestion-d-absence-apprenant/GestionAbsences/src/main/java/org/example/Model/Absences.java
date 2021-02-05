@@ -5,24 +5,15 @@ import java.util.Date;
 public class Absences {
     private int id ;
     private int Student_id;
-    private String date;
+    private Date date;
     private int Absence_type;
-    private String Absence_typ;
 
-    public String getAbsence_typ() {
-        return Absence_typ;
+
+    public Absences(String full_name, String type_ab) {
     }
 
-    public void setAbsence_typ(String absence_typ) {
-        Absence_typ = absence_typ;
-    }
 
-    public Absences(String date, String absence_typ) {
-        this.date = date;
-        Absence_typ = absence_typ;
-    }
-
-    public Absences( int id, int student_id, String date, int absence_type) {
+    public Absences( int id, int student_id, Date date, int absence_type) {
         this.id = id;
         Student_id = student_id;
         this.date = date;
@@ -46,11 +37,11 @@ public class Absences {
         Student_id = student_id;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

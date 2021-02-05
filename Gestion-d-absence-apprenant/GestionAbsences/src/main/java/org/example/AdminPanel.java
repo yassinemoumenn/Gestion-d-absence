@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -77,6 +76,7 @@ public class AdminPanel implements Initializable {
         classView.setVisible(false);
         window = 1;
         extracted();
+
     }
 
     public void displayform(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
@@ -108,7 +108,6 @@ public class AdminPanel implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        App.stage.close();
         try {
             extracted();
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -140,30 +139,30 @@ public class AdminPanel implements Initializable {
 
     //pop for add new formateur
     public void setNewUserFormateur(MouseEvent mouseEvent) throws IOException {
-        popUp("setNewFormateur" , "Ajouter un formateur");
+        popUp("setNewFormateur");
     }
 
     //pop for add new student
     public void setNewUser(MouseEvent mouseEvent) throws IOException {
-        popUp("setNewUser" , "Ajouter un étudent");
+        popUp("setNewUser");
 
     }
 
     //pop for add new secreteir
     public void setNewSec(MouseEvent mouseEvent) throws IOException {
-        popUp("setNewSecretaire" , "Ajouter une secrèteir");
+        popUp("setNewSecretaire");
 
     }
 
     //pop for add new class
     public void setNewClass(MouseEvent mouseEvent) throws IOException {
-        popUp("SetNewClasse" , "Ajouter un classe");
+        popUp("SetNewClasse");
     }
 
-    private void popUp(String pop , String title) throws IOException {
+    private void popUp(String pop) throws IOException {
         stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(pop + ".fxml"));
-        stage.setTitle(title);
+        stage.setTitle("Gestion d'Absence");
         stage.setScene(new Scene(root));
         stage.show();
     }
@@ -253,12 +252,4 @@ public class AdminPanel implements Initializable {
     public void refresh(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
       extracted();
     }
-
-    public void logout(MouseEvent mouseEvent) throws IOException {
-        popUp("Login" , "Log in");
-        updateBTN.getScene().getWindow().hide();
-    }
 }
-
-
-

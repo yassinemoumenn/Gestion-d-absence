@@ -93,11 +93,8 @@ public class UserDaoImp  implements UserDao{
             try {
                 String sql = "SELECT * FROM `Users` WHERE id= ? ";
                 PreparedStatement stmt = Objects.requireNonNull(Connexion.connect()).prepareStatement(sql);
-               stmt.setInt(1, id);
-
-               ResultSet rs= stmt.executeQuery();
-//               while(rs.next()) System.out.println(rs.getString("full_name"));
-               return rs;
+                stmt.setInt(1, id);
+                return stmt.executeQuery();
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }

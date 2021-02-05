@@ -8,15 +8,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * JavaFX App
+ */
 public class App extends Application {
-    public static Stage stage;
+
     @Override
     public void start(Stage stage) throws IOException {
-        App.stage = stage;
+
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        App.stage.setTitle("Log in");
-        App.stage.setScene(new Scene(root));
-        App.stage.show();
+        stage.setTitle("Gestion d'asbcenses");
+        stage.setScene(new Scene(root));
+
+        stage.show();
     }
 
 

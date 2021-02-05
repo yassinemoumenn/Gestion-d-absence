@@ -3,167 +3,202 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane prefHeight="755.0" prefWidth="1254.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AdminPanel">
+<AnchorPane prefHeight="755.0" prefWidth="1254.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AdminPanel">
     <children>
         <VBox prefHeight="755.0" prefWidth="184.0" style="-fx-background-color: #191970;">
             <children>
-                <Button mnemonicParsing="false" onMouseClicked="#displayStude" prefHeight="46.0" prefWidth="210.0" text="Apprenents" />
-                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#displayform" prefHeight="46.0" prefWidth="210.0" text="Formateurs" />
-                <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#displaySere" prefHeight="46.0" prefWidth="210.0" text="Secretaires" />
-                <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#displayClasses" prefHeight="46.0" prefWidth="210.0" text="Classes" />
-            <Button layoutX="10.0" layoutY="148.0" mnemonicParsing="false"  onMouseClicked="#logout" prefHeight="46.0" prefWidth="210.0" text="Log out" />
+                <Button mnemonicParsing="false" onMouseClicked="#displayStude" prefHeight="46.0" prefWidth="210.0"
+                        text="Apprenents"/>
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#displayform"
+                        prefHeight="46.0" prefWidth="210.0" text="Formateurs"/>
+                <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#displaySere"
+                        prefHeight="46.0" prefWidth="210.0" text="Secretaires"/>
+                <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#displayClasses"
+                        prefHeight="46.0" prefWidth="210.0" text="Classes"/>
             </children>
         </VBox>
-        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="studentPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="true"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="114.0" prefWidth="1041.0">
                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
-                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0"
+                                text="Ajouter "/>
+                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser"
+                                prefHeight="41.0" prefWidth="125.0" text="Effacer">
                             <HBox.margin>
-                                <Insets left="20.0" right="27.0" />
+                                <Insets left="20.0" right="27.0"/>
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="updateBTN" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateUser" prefHeight="41.0" prefWidth="125.0" text="Modifié" visible="true" />
-                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                        <Button fx:id="updateBTN" layoutX="155.0" layoutY="78.0" mnemonicParsing="false"
+                                onMouseClicked="#UpdateUser" prefHeight="41.0" prefWidth="125.0" text="Modifié"
+                                visible="true"/>
+                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" onMouseClicked="#refresh"
+                                mnemonicParsing="false" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir"
+                                textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                             <opaqueInsets>
-                                <Insets />
+                                <Insets/>
                             </opaqueInsets>
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
 
-                        <VBox fx:id="updateForm" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0" prefWidth="225.0" spacing="20.0" visible="false">
+                        <VBox fx:id="updateForm" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0"
+                              prefWidth="225.0" spacing="20.0" visible="false">
                             <children>
-                                <ChoiceBox fx:id="classes" prefWidth="150.0" />
-                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" text="Modifié" />
+                                <ChoiceBox fx:id="classes" prefWidth="150.0"/>
+                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0"
+                                        prefWidth="153.0" text="Modifié"/>
                             </children>
                         </VBox>
                     </children>
                 </HBox>
-                <TableView fx:id="userTable" fixedCellSize="0.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="1041.0" VBox.vgrow="ALWAYS">
+                <TableView fx:id="userTable" fixedCellSize="0.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity"
+                           minWidth="-Infinity" prefHeight="647.0" prefWidth="1041.0" VBox.vgrow="ALWAYS">
                     <columns>
 
-                        <TableColumn fx:id="student_name" prefWidth="328.0" text="Nom et premon" />
-                        <TableColumn fx:id="student_email" prefWidth="458.0" text="Email" />
-                        <TableColumn fx:id="student_class" prefWidth="253.0" text="classe" />
+                        <TableColumn fx:id="student_name" prefWidth="328.0" text="Nom et premon"/>
+                        <TableColumn fx:id="student_email" prefWidth="458.0" text="Email"/>
+                        <TableColumn fx:id="student_class" prefWidth="253.0" text="classe"/>
 
                     </columns>
                 </TableView>
             </children>
             <padding>
-                <Insets left="15.0" right="15.0" />
+                <Insets left="15.0" right="15.0"/>
             </padding>
         </VBox>
-        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="formateuPanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="97.0" prefWidth="1040.0">
                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
-                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewUserFormateur" prefHeight="41.0"
+                                prefWidth="125.0" text="Ajouter"/>
+                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser"
+                                prefHeight="41.0" prefWidth="125.0" text="Effacer">
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="updateBT" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateForma" prefHeight="41.0" prefWidth="125.0" text="Modifié" visible="true">
+                        <Button fx:id="updateBT" layoutX="155.0" layoutY="78.0" mnemonicParsing="false"
+                                onMouseClicked="#UpdateForma" prefHeight="41.0" prefWidth="125.0" text="Modifié"
+                                visible="true">
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
-                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" onMouseClicked="#refresh"
+                                mnemonicParsing="false" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir"
+                                textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                             <opaqueInsets>
-                                <Insets />
+                                <Insets/>
                             </opaqueInsets>
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
 
-                        <VBox fx:id="updateFor" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0" prefWidth="225.0" spacing="20.0" visible="false">
+                        <VBox fx:id="updateFor" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0"
+                              prefWidth="225.0" spacing="20.0" visible="false">
                             <children>
-                                <ChoiceBox fx:id="classi" prefWidth="150.0" />
-                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" text="Modifié" />
+                                <ChoiceBox fx:id="classi" prefWidth="150.0"/>
+                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0"
+                                        prefWidth="153.0" text="Modifié"/>
                             </children>
                         </VBox>
                     </children>
                 </HBox>
-                <TableView fx:id="formateurTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="644.0" prefWidth="1040.0">
+                <TableView fx:id="formateurTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="644.0"
+                           prefWidth="1040.0">
                     <columns>
 
-                        <TableColumn fx:id="formateur_name" prefWidth="290.0" text="Nom et premon" />
-                        <TableColumn fx:id="formateur_email" prefWidth="469.0" text="Email" />
-                        <TableColumn fx:id="formateur_class" prefWidth="204.0" text="classe" />
+                        <TableColumn fx:id="formateur_name" prefWidth="290.0" text="Nom et premon"/>
+                        <TableColumn fx:id="formateur_email" prefWidth="469.0" text="Email"/>
+                        <TableColumn fx:id="formateur_class" prefWidth="204.0" text="classe"/>
                     </columns>
                 </TableView>
             </children>
             <padding>
-                <Insets left="15.0" right="15.0" />
+                <Insets left="15.0" right="15.0"/>
             </padding>
         </VBox>
-        <VBox fx:id="secrePanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="secrePanel" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#setNewSec" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
-                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewSec" prefHeight="41.0" prefWidth="125.0"
+                                text="Ajouter"/>
+                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser"
+                                prefHeight="41.0" prefWidth="125.0" text="Effacer">
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
-                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" onMouseClicked="#refresh"
+                                mnemonicParsing="false" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir"
+                                textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                             <opaqueInsets>
-                                <Insets />
+                                <Insets/>
                             </opaqueInsets>
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
                     </children>
                 </HBox>
-                <TableView fx:id="secreTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0" prefWidth="1040.0">
+                <TableView fx:id="secreTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0"
+                           prefWidth="1040.0">
                     <columns>
 
-                        <TableColumn fx:id="sec_name" prefWidth="526.0" text="Nom et premon" />
-                        <TableColumn fx:id="sec_email" prefWidth="438.0" text="Email" />
+                        <TableColumn fx:id="sec_name" prefWidth="526.0" text="Nom et premon"/>
+                        <TableColumn fx:id="sec_email" prefWidth="438.0" text="Email"/>
                     </columns>
                 </TableView>
             </children>
             <padding>
-                <Insets left="15.0" right="15.0" />
+                <Insets left="15.0" right="15.0"/>
             </padding>
         </VBox>
-        <VBox fx:id="classView" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="classView" layoutX="184.0" prefHeight="755.0" prefWidth="1070.0" spacing="6.0" visible="false"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#setNewClass" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
-                        <Button layoutX="10.0" mnemonicParsing="false" onMouseClicked="#DeleteClass" prefHeight="41.0" prefWidth="125.0" text="Effacer">
+                        <Button mnemonicParsing="false" onMouseClicked="#setNewClass" prefHeight="41.0"
+                                prefWidth="125.0" text="Ajouter"/>
+                        <Button layoutX="10.0" mnemonicParsing="false" onMouseClicked="#DeleteClass" prefHeight="41.0"
+                                prefWidth="125.0" text="Effacer">
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
-                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" onMouseClicked="#refresh"
+                                mnemonicParsing="false" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir"
+                                textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
                             <opaqueInsets>
-                                <Insets />
+                                <Insets/>
                             </opaqueInsets>
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </Button>
                     </children>
                 </HBox>
-                <TableView fx:id="classTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0" prefWidth="1040.0">
+                <TableView fx:id="classTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0"
+                           prefWidth="1040.0">
                     <columns>
 
-                        <TableColumn fx:id="class_name" prefWidth="526.0" text="Classe N°:" />
-                        <TableColumn fx:id="class_formateur" prefWidth="438.0" text="Classe" />
+                        <TableColumn fx:id="class_name" prefWidth="526.0" text="Classe N°:"/>
+                        <TableColumn fx:id="class_formateur" prefWidth="438.0" text="Classe"/>
                     </columns>
                 </TableView>
             </children>
             <padding>
-                <Insets left="15.0" right="15.0" />
+                <Insets left="15.0" right="15.0"/>
             </padding>
         </VBox>
     </children>

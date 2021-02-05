@@ -22,7 +22,6 @@ public class AbsencesDAOImpl implements AbsencesDAO {
             stmt.setInt(1, student_id);
             ResultSet abs = stmt.executeQuery();
             while (abs.next()) {
-                System.out.println(abs.getDate("date").toString() +" " + abs.getString("type"));
                 absences.add(new Absences(abs.getDate("date").toString(), abs.getString("type")));
             }
             return absences;

@@ -49,7 +49,7 @@ public class SecretaireDaoImp  extends Connexion implements SecretaireDao{
 
         Connection conn = null;
         try{
-            String requete = "Update Absences set jistification= ? where Student_id = ?";
+            String requete = "Update absences set jistification= ? where Student_id = ?";
             PreparedStatement statement =  Objects.requireNonNull(connect()).prepareStatement(requete);
 
             statement.setString(1, justification);
@@ -73,18 +73,18 @@ public class SecretaireDaoImp  extends Connexion implements SecretaireDao{
     @Override
     public ObservableList<ApprenantAbsente> AfficheAllpprantAbsence() {
         ObservableList<ApprenantAbsente> ApprenantsAbsentes= FXCollections.observableArrayList();
+        Connection conn = null;
         try {
-            String requete= "SELECT u.full_name,u.email,t.type AS type_ab ,a.jistification ,s.id FROM Absences a LEFT JOIN Absence_type t ON a.Absence_type = t.id LEFT JOIN Students s ON s.id = a.Student_id LEFT JOIN Users u ON u.id = s.user_id;";
+            String requete= "select full_name,email,type_ab,jistification,Student_id from users,absence_type,absences,students where users.id=students.user_id and students.id=absences.Student_id and absence_type.id=absences.Absence_type";
             PreparedStatement statement = Objects.requireNonNull(connect()).prepareStatement(requete);
             ResultSet rs = statement.executeQuery();
+            ApprenantAbsente apprenantAbsente;
             while (rs.next()) {
-                System.out.println(rs.getString("type_ab") );
-                ApprenantAbsente  apprenantAbsente = new  ApprenantAbsente(rs.getString("full_name"),rs.getString("email"),rs.getString("type_ab"),rs.getString("jistification"),rs.getInt("id"));
+                apprenantAbsente = new  ApprenantAbsente(rs.getString("full_name"),rs.getString("email"),rs.getString("type_ab"),rs.getString("jistification"),rs.getInt("Student_id"));
                 ApprenantsAbsentes.add(apprenantAbsente);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-
         }
         return ApprenantsAbsentes;
     }

@@ -129,4 +129,9 @@ public class secretairecontroller implements Initializable {
         showApprenantsAbsences();
     }
 
+    public void update(){
+
+    }
+
+
 }
