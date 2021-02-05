@@ -5,23 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="fix bug">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_example_GestionAbsences_1_0_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_15_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_15_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-19,_3_29_p_m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-19__3_29_p_m___Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-22,_9_31_a_m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-22,_9_32_a_m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-22__9_31_a_m___Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-22__9_32_a_m___Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-23,_2_32_p_m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-23__2_32_p_m___Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_15_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_15_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_linux_15_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_15_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-29__7_06_p_m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-01-29__7_06_p_m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-02-03__12_09_p_m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-02-03__12_09_p_m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/GestionAbsences.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/GestionAbsences.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/Formateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/Formateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/SetNewClasse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/SetNewClasse.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/contrapprenant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/contrapprenant.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/secretaire.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/secretaire.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/setNewFormateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/setNewFormateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/setNewSecretaire.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/setNewSecretaire.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/setNewUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/setNewUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/AdminPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/target/classes/org/example/Login.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,13 +106,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,6 +156,7 @@
       <workItem from="1612170153051" duration="763000" />
       <workItem from="1612340651024" duration="1362000" />
       <workItem from="1612514122568" duration="3439000" />
+      <workItem from="1612532585607" duration="2833000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1611318414954</created>

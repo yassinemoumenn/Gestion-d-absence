@@ -4,35 +4,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Contrapprenant">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Contrapprenant">
     <children>
-        <HBox layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="769.0">
+        <HBox layoutX="13.0" layoutY="154.0" prefHeight="59.0" prefWidth="256.0" spacing="1.0">
             <children>
-                <Label alignment="CENTER" opacity="0.64" prefHeight="43.0" prefWidth="210.0" text="Page Etudiant">
-                    <HBox.margin>
-                        <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
-                    </HBox.margin>
-                    <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                    </padding>
-                    <font>
-                        <Font name="Arial Black" size="22.0" />
-                    </font>
-                </Label>
-            </children></HBox>
-        <HBox layoutX="13.0" layoutY="114.0" prefHeight="59.0" prefWidth="256.0" spacing="1.0">
-            <children>
-                <Label prefHeight="38.0" prefWidth="62.0" text="name">
+                <Label prefHeight="38.0" prefWidth="62.0" text="Name">
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
                     <font>
-                        <Font name="Comic Sans MS Bold" size="12.0" />
+                        <Font name="Comic Sans MS Bold" size="14.0" />
                     </font>
                 </Label>
                 <Label fx:id="LabelFull_name" prefHeight="38.0" prefWidth="173.0">
@@ -48,14 +37,14 @@
                 <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
             </padding>
         </HBox>
-        <HBox layoutX="14.0" layoutY="173.0" prefHeight="59.0" prefWidth="256.0" spacing="1.0">
+        <HBox layoutX="13.0" layoutY="250.0" prefHeight="59.0" prefWidth="256.0" spacing="1.0">
             <children>
-                <Label prefHeight="38.0" prefWidth="90.0" text="classe">
+                <Label prefHeight="38.0" prefWidth="90.0" text="Classe">
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
                     <font>
-                        <Font name="Comic Sans MS Bold" size="12.0" />
+                        <Font name="Comic Sans MS Bold" size="15.0" />
                     </font>
                 </Label>
                 <Label fx:id="labelClass_id" prefHeight="38.0" prefWidth="173.0">
@@ -71,15 +60,35 @@
                 <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
             </padding>
         </HBox>
-        <VBox layoutX="269.0" layoutY="112.0" prefHeight="299.0" prefWidth="514.0">
+        <VBox layoutX="295.0" layoutY="154.0" prefHeight="267.0" prefWidth="554.0">
             <children>
-                <TableView fx:id="tableAbsence" prefHeight="414.0" prefWidth="180.0">
+                <TableView fx:id="tableAbsence" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="554.0">
                     <columns>
-                        <TableColumn fx:id="colAbs" prefWidth="256.800048828125" text="Absence " />
-                        <TableColumn fx:id="colAbs_date" maxWidth="4933.0" minWidth="44.0" prefWidth="257.9999694824219" text="date d'absence" />
+                        <TableColumn fx:id="colAbs" prefWidth="277.6000061035156" text="Absence " />
+                        <TableColumn fx:id="colAbs_date" maxWidth="4933.0" minWidth="44.0" prefWidth="275.1999877929687" text="date d'absence" />
                     </columns>
                 </TableView>
             </children>
         </VBox>
+      <HBox layoutY="-1.0" prefHeight="118.0" prefWidth="900.0" style="-fx-background-color: #1565c0;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PAGE ETUDIENT" wrappingWidth="291.7367191314697">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="9.0" left="43.0" top="21.0" />
+               </HBox.margin>
+            </Text>
+            <ImageView fitHeight="65.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="314.0" top="23.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../../../../../../../GestionAbsences/src/main/img/logo-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
     </children>
 </AnchorPane>

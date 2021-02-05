@@ -5,41 +5,19 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AdminPanel">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AdminPanel">
     <children>
-        <VBox fx:id="studentPanel" layoutX="184.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="662.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="studentPanel" layoutX="184.0" layoutY="116.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="652.0" spacing="6.0" visible="true" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="116.0">
             <children>
-                <HBox alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="114.0" prefWidth="658.0">
-                    <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0" text="Ajouter " />
-                        <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
-                            <HBox.margin>
-                                <Insets left="20.0" right="27.0" />
-                            </HBox.margin>
-                        </Button>
-                        <Button fx:id="updateBTN" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateUser" prefHeight="41.0" prefWidth="125.0" text="Modifié" visible="true" />
-                        <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="41.0" prefWidth="134.0" text="Rafraîchir" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-                            <opaqueInsets>
-                                <Insets />
-                            </opaqueInsets>
-                            <HBox.margin>
-                                <Insets left="20.0" />
-                            </HBox.margin>
-                        </Button>
-
-                        <VBox fx:id="updateForm" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0" prefWidth="225.0" spacing="20.0" visible="false">
-                            <children>
-                                <ChoiceBox fx:id="classes" prefWidth="150.0" />
-                                <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" text="Modifié" />
-                            </children>
-                        </VBox>
-                    </children>
-                </HBox>
-                <TableView fx:id="userTable" fixedCellSize="0.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="642.0" VBox.vgrow="ALWAYS">
+                <TableView fx:id="userTable" fixedCellSize="0.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="636.0" VBox.vgrow="ALWAYS">
                     <columns>
 
                         <TableColumn fx:id="student_name" prefWidth="172.8000003695488" text="Nom et premon" />
@@ -162,14 +140,96 @@
                 <Insets left="15.0" right="15.0" />
             </padding>
         </VBox>
-      <VBox layoutX="14.0" layoutY="130.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="238.0" prefWidth="184.0">
+      <VBox layoutX="14.0" layoutY="130.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="184.0" spacing="16.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#displayStude" prefHeight="46.0" prefWidth="210.0" text="Apprenents" />
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#displayform" prefHeight="46.0" prefWidth="210.0" text="Formateurs" />
-            <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#displaySere" prefHeight="46.0" prefWidth="210.0" text="Secretaires" />
-            <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#displayClasses" prefHeight="46.0" prefWidth="210.0" text="Classes" />
-            <Button layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="46.0" prefWidth="210.0" text="Log out" />
+            <Button mnemonicParsing="false" onMouseClicked="#displayStude" prefHeight="46.0" prefWidth="210.0" style="-fx-background-color: #1565c0;" text="Apprenents" textFill="WHITE">
+               <padding>
+                  <Insets top="1.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#displayform" prefHeight="46.0" prefWidth="210.0" style="-fx-background-color: #1565c0;" text="Formateurs" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#displaySere" prefHeight="46.0" prefWidth="210.0" style="-fx-background-color: #1565c0;" text="Secretaires" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#displayClasses" prefHeight="46.0" prefWidth="210.0" style="-fx-background-color: #1565c0;" text="Classes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="46.0" prefWidth="210.0" style="-fx-background-color: #1565c0;" text="Log out" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
          </children>
       </VBox>
+          <HBox alignment="CENTER_LEFT" layoutX="207.0" layoutY="400.0" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="652.0">
+              <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#setNewUser" prefHeight="41.0" prefWidth="125.0" style="-fx-background-color: #1565c0;" text="Ajouter " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+                  <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" style="-fx-background-color: #1565c0;" text="Effacer" textFill="WHITE">
+                      <HBox.margin>
+                          <Insets left="20.0" right="27.0" />
+                      </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+                  </Button>
+                  <Button fx:id="updateBTN" layoutX="155.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#UpdateUser" prefHeight="41.0" prefWidth="125.0" style="-fx-background-color: #1565c0;" text="Modifié" textFill="WHITE" visible="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+                  <Button alignment="CENTER" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onMouseClicked="#refresh" prefHeight="42.0" prefWidth="121.0" style="-fx-background-color: #1565c0;" text="Rafraîchir" textAlignment="CENTER" textFill="#fafafa" textOverrun="CENTER_ELLIPSIS">
+                      <opaqueInsets>
+                          <Insets />
+                      </opaqueInsets>
+                      <HBox.margin>
+                          <Insets left="20.0" />
+                      </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+                  </Button>
+
+                  <VBox fx:id="updateForm" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="177.0" prefWidth="225.0" spacing="20.0" visible="false">
+                      <children>
+                          <ChoiceBox fx:id="classes" prefWidth="150.0" style="-fx-background-color: #1565c0;" />
+                          <Button mnemonicParsing="false" onMouseClicked="#UpdateStudent" prefHeight="26.0" prefWidth="153.0" style="-fx-background-color: #1565c0;" text="Modifié" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                      </children>
+                  </VBox>
+              </children>
+          </HBox>
+      <HBox layoutX="-4.0" prefHeight="108.0" prefWidth="906.0" style="-fx-background-color: #1565c0;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboad" wrappingWidth="291.7367191314697">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="9.0" left="43.0" top="21.0" />
+               </HBox.margin>
+            </Text>
+            <ImageView fitHeight="96.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="314.0" top="23.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../../../../../../../GestionAbsences/src/main/img/logo-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
     </children>
 </AnchorPane>
