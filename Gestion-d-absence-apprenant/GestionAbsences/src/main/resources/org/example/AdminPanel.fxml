@@ -5,8 +5,6 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -33,7 +31,7 @@
         </VBox>
         <VBox fx:id="formateuPanel" layoutX="184.0" layoutY="119.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="652.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="119.0">
             <children>
-                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="97.0" prefWidth="1040.0">
+                <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="71.0" prefWidth="646.0">
                     <children>
                         <Button mnemonicParsing="false" onMouseClicked="#setNewUserFormateur" prefHeight="41.0" prefWidth="125.0" text="Ajouter" />
                         <Button layoutX="10.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="41.0" prefWidth="125.0" text="Effacer">
@@ -63,7 +61,7 @@
                         </VBox>
                     </children>
                 </HBox>
-                <TableView fx:id="formateurTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="644.0" prefWidth="1040.0">
+                <TableView fx:id="formateurTable" fixedCellSize="0.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="254.0" prefWidth="626.0">
                     <columns>
 
                         <TableColumn fx:id="formateur_name" prefWidth="290.0" text="Nom et premon" />
@@ -96,7 +94,7 @@
                         </Button>
                     </children>
                 </HBox>
-                <TableView fx:id="secreTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0" prefWidth="1040.0">
+                <TableView fx:id="secreTable" fixedCellSize="0.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="643.0">
                     <columns>
 
                         <TableColumn fx:id="sec_name" prefWidth="526.0" text="Nom et premon" />
@@ -108,7 +106,7 @@
                 <Insets left="15.0" right="15.0" />
             </padding>
         </VBox>
-        <VBox fx:id="classView" layoutX="184.0" layoutY="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="662.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="-1.0">
+        <VBox fx:id="classView" layoutX="184.0" layoutY="113.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="662.0" spacing="6.0" visible="false" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="113.0">
             <children>
                 <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="86.0" prefWidth="1058.0">
                     <children>
@@ -128,7 +126,7 @@
                         </Button>
                     </children>
                 </HBox>
-                <TableView fx:id="classTable" fixedCellSize="0.0" minWidth="-Infinity" prefHeight="636.0" prefWidth="1040.0">
+                <TableView fx:id="classTable" fixedCellSize="0.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="634.0">
                     <columns>
 
                         <TableColumn fx:id="class_name" prefWidth="526.0" text="Classe N°:" />
