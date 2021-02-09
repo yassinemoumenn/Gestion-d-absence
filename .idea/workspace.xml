@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="072687f8-3175-46c1-817f-3aaa4376f3a4" name="Default Changelist" comment="fix bug">
+      <change afterPath="$PROJECT_DIR$/GestionAbsences/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-02-03__12_09_p_m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021-02-03__12_09_p_m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/AdminPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/FormateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/java/org/example/FormateurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/Formateur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Gestion-d-absence-apprenant/GestionAbsences/src/main/resources/org/example/Formateur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/FormateurDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionAbsences/src/main/java/org/example/DAO/FormateurDaoImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +133,7 @@
       <workItem from="1612514122568" duration="3439000" />
       <workItem from="1612532585607" duration="2833000" />
       <workItem from="1612655869553" duration="834000" />
+      <workItem from="1612907985309" duration="1697000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug">
       <created>1611318414954</created>
@@ -165,10 +172,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/GestionAbsences$app.ic" NAME="app Coverage Results" MODIFIED="1611756769994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GestionAbsences$App.ic" NAME="App Coverage Results" MODIFIED="1611263692855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GestionAbsences$App.ic" NAME="App Coverage Results" MODIFIED="1611263692855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/GestionAbsences$app.ic" NAME="app Coverage Results" MODIFIED="1611756769994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
   </component>

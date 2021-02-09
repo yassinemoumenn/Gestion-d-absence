@@ -4,14 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import org.example.DAO.FormateurDaoImp;
 import org.example.Model.Absence_type;
 import org.example.Model.Absences;
@@ -19,7 +15,6 @@ import org.example.Model.AffichageStudent;
 
 
 import javax.swing.*;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -34,15 +29,14 @@ public class FormateurController implements Initializable {
     @FXML
     private TableColumn<AffichageStudent, String> colfullname;
     @FXML
-     private  TableColumn <AffichageStudent, String> ab;
+     private  TableColumn <AffichageStudent, String>ab;
     @FXML
     private ComboBox type;
     @FXML
     private TextField textName;
 
     @FXML
-    private Button logout;
-    public static Stage stage;
+    private Button insert;
 
 
     public FormateurController() {
@@ -91,6 +85,8 @@ public class FormateurController implements Initializable {
         TableView.setItems(list);
 
         students = list;
+        //TableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        //TableView.getSelectionModel().setCellSelectionEnabled(true);
 
     }
 
@@ -100,6 +96,8 @@ public class FormateurController implements Initializable {
 
         FormateurDaoImp formateur = new FormateurDaoImp();
         ObservableList<Absence_type> typesList = formateur.GetTypes();
+
+        //selectApprenant.getItems().apprenantList;
         types = typesList;
 
         type.setItems(typesList.stream().map(absence_type -> absence_type.getType_ab()).collect(Collectors.collectingAndThen(toList(), l -> FXCollections.observableArrayList(l))));
@@ -126,6 +124,7 @@ public class FormateurController implements Initializable {
 
     public void addbtn(ActionEvent actionEvent) {
         FormateurDaoImp formateurDaoImp1 = new FormateurDaoImp();
+        //String student = textName.getText();
         String typeab = (String)type.getValue();
         System.out.println(typeab);
         Absence_type type = types.get(currentTypeIndex);
@@ -136,19 +135,10 @@ public class FormateurController implements Initializable {
         {
 
         }
-    }
+       // Absences absences = new Absences(typeab);
+        //formateurDaoImp1.setAbsence(absences);
 
-    private void popUp(String pop , String title) throws IOException {
-        stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource(pop + ".fxml"));
-        stage.setTitle(title);
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
 
-    public void logout(MouseEvent mouseEvent) throws IOException {
-        popUp("Login" , "Log in");
-        logout.getScene().getWindow().hide();
     }
 
 }
